@@ -16,7 +16,7 @@ public interface PromozioneRepository {
 	 * 
 	 * @param id
 	 */
-	Promozione findById(string id);
+	Promozione findById(String id);
 
 	/**
 	 * 

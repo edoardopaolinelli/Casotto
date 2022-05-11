@@ -8,13 +8,13 @@ public interface UserHandlerService {
 	 * @param email
 	 * @param password
 	 */
-	List<Long> login(int type, string email, string password);
+	List<Long> login(int type, String email, String password);
 
 	/**
 	 * 
 	 * @param token
 	 */
-	string logout(long token);
+	String logout(long token);
 
 	/**
 	 * 
@@ -24,7 +24,7 @@ public interface UserHandlerService {
 	 * @param email
 	 * @param password
 	 */
-	void signin(int type, string name, string surname, string email, string password);
+	void signin(int type, String name, String surname, String email, String password);
 
 	List<User> getAllUsers();
 

@@ -8,7 +8,7 @@ public class GestoreOmbrelloni {
 	 * 
 	 * @param idOmbrellone
 	 */
-	public Ombrellone getSingleOmbrellone(string idOmbrellone) {
+	public Ombrellone getSingleOmbrellone(String idOmbrellone) {
 		// TODO - implement GestoreOmbrelloni.getSingleOmbrellone
 		throw new UnsupportedOperationException();
 	}

@@ -10,7 +10,7 @@ public class UserHandlerServiceImpl implements UserHandlerService {
 	 * @param email
 	 * @param password
 	 */
-	public List<Long> login(int type, string email, string password) {
+	public List<Long> login(int type, String email, String password) {
 		// TODO - implement UserHandlerServiceImpl.login
 		throw new UnsupportedOperationException();
 	}
@@ -19,7 +19,7 @@ public class UserHandlerServiceImpl implements UserHandlerService {
 	 * 
 	 * @param token
 	 */
-	public string logout(long token) {
+	public String logout(long token) {
 		// TODO - implement UserHandlerServiceImpl.logout
 		throw new UnsupportedOperationException();
 	}
@@ -32,7 +32,7 @@ public class UserHandlerServiceImpl implements UserHandlerService {
 	 * @param email
 	 * @param password
 	 */
-	public void signin(int type, string name, string surname, string email, string password) {
+	public void signin(int type, String name, String surname, String email, String password) {
 		// TODO - implement UserHandlerServiceImpl.signin
 		throw new UnsupportedOperationException();
 	}

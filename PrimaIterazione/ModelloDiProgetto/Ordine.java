@@ -4,18 +4,18 @@ import SecondaIterazione.Modello_di_Progetto.*;
 
 public class Ordine {
 
-	private string idOrdine;
+	private String idOrdine;
 	private float price;
 	private List<Piatto> orderedDishes;
-	private string idCliente;
+	private String idCliente;
 	private Date startOrder;
 	private Date endOrder;
 
-	public string getIdOrdine() {
+	public String getIdOrdine() {
 		return this.idOrdine;
 	}
 
-	public string getIdCliente() {
+	public String getIdCliente() {
 		return this.idCliente;
 	}
 
@@ -40,7 +40,7 @@ public class Ordine {
 	 * 
 	 * @param idOrdine
 	 */
-	public void setIdOrdine(string idOrdine) {
+	public void setIdOrdine(String idOrdine) {
 		this.idOrdine = idOrdine;
 	}
 
@@ -48,7 +48,7 @@ public class Ordine {
 	 * 
 	 * @param idCliente
 	 */
-	public void setIdCliente(string idCliente) {
+	public void setIdCliente(String idCliente) {
 		this.idCliente = idCliente;
 	}
 

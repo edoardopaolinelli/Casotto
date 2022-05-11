@@ -13,7 +13,7 @@ public class LettinoServiceImpl implements LettinoService {
 	 * @param price
 	 * @param type
 	 */
-	public Lettino createLettino(string idLettino, float price, string type) {
+	public Lettino createLettino(String idLettino, float price, String type) {
 		// TODO - implement LettinoServiceImpl.createLettino
 		throw new UnsupportedOperationException();
 	}
@@ -22,7 +22,7 @@ public class LettinoServiceImpl implements LettinoService {
 	 * 
 	 * @param idLettino
 	 */
-	public void deleteLettino(string idLettino) {
+	public void deleteLettino(String idLettino) {
 		// TODO - implement LettinoServiceImpl.deleteLettino
 		throw new UnsupportedOperationException();
 	}
@@ -31,7 +31,7 @@ public class LettinoServiceImpl implements LettinoService {
 	 * 
 	 * @param idLettino
 	 */
-	public Lettino getLettino(string idLettino) {
+	public Lettino getLettino(String idLettino) {
 		// TODO - implement LettinoServiceImpl.getLettino
 		throw new UnsupportedOperationException();
 	}
@@ -45,7 +45,7 @@ public class LettinoServiceImpl implements LettinoService {
 	 * 
 	 * @param lettinoType
 	 */
-	public List<Lettino> getLettiniByType(string lettinoType) {
+	public List<Lettino> getLettiniByType(String lettinoType) {
 		// TODO - implement LettinoServiceImpl.getLettiniByType
 		throw new UnsupportedOperationException();
 	}

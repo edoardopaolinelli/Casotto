@@ -17,7 +17,7 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param startOrder
 	 * @param endOrder
 	 */
-	public Ordine createOrdine(string idOrdine, string idCliente, float price, List orderedDishes, Date startOrder, Date endOrder) {
+	public Ordine createOrdine(String idOrdine, String idCliente, float price, List orderedDishes, Date startOrder, Date endOrder) {
 		// TODO - implement OrdineServiceImpl.createOrdine
 		throw new UnsupportedOperationException();
 	}
@@ -26,7 +26,7 @@ public class OrdineServiceImpl implements OrdineService {
 	 * 
 	 * @param idOrdine
 	 */
-	public void deleteOrdine(string idOrdine) {
+	public void deleteOrdine(String idOrdine) {
 		// TODO - implement OrdineServiceImpl.deleteOrdine
 		throw new UnsupportedOperationException();
 	}
@@ -35,7 +35,7 @@ public class OrdineServiceImpl implements OrdineService {
 	 * 
 	 * @param idOrdine
 	 */
-	public Ordine getOrdine(string idOrdine) {
+	public Ordine getOrdine(String idOrdine) {
 		// TODO - implement OrdineServiceImpl.getOrdine
 		throw new UnsupportedOperationException();
 	}
@@ -50,7 +50,7 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param idOrdine
 	 * @param idCliente
 	 */
-	public void confirmOrdine(string idOrdine, string idCliente) {
+	public void confirmOrdine(String idOrdine, String idCliente) {
 		// TODO - implement OrdineServiceImpl.confirmOrdine
 		throw new UnsupportedOperationException();
 	}
@@ -60,7 +60,7 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param idOrdine
 	 * @param idCliente
 	 */
-	public void declineOrdine(string idOrdine, string idCliente) {
+	public void declineOrdine(String idOrdine, String idCliente) {
 		// TODO - implement OrdineServiceImpl.declineOrdine
 		throw new UnsupportedOperationException();
 	}
@@ -71,7 +71,7 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param idCliente
 	 * @param amount
 	 */
-	public void addPiatto(long idPiatto, string idCliente, int amount) {
+	public void addPiatto(long idPiatto, String idCliente, int amount) {
 		// TODO - implement OrdineServiceImpl.addPiatto
 		throw new UnsupportedOperationException();
 	}
@@ -82,7 +82,7 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param idCliente
 	 * @param amount
 	 */
-	public void removePiatto(long idPiatto, string idCliente, int amount) {
+	public void removePiatto(long idPiatto, String idCliente, int amount) {
 		// TODO - implement OrdineServiceImpl.removePiatto
 		throw new UnsupportedOperationException();
 	}

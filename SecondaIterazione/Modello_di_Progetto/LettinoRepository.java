@@ -16,7 +16,7 @@ public interface LettinoRepository {
 	 * 
 	 * @param id
 	 */
-	Lettino findById(string id);
+	Lettino findById(String id);
 
 	/**
 	 * 

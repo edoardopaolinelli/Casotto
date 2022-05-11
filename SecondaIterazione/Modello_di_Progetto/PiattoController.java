@@ -8,7 +8,7 @@ public class PiattoController {
 	 * 
 	 * @param namePiatto
 	 */
-	public Piatto getPiatto(string namePiatto) {
+	public Piatto getPiatto(String namePiatto) {
 		// TODO - implement PiattoController.getPiatto
 		throw new UnsupportedOperationException();
 	}

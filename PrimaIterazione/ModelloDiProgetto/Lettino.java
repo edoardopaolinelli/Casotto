@@ -2,11 +2,11 @@ package PrimaIterazione.ModelloDiProgetto;
 
 public class Lettino {
 
-	private string idLettino;
+	private String idLettino;
 	private float price;
-	private string lettinoType;
+	private String lettinoType;
 
-	public string getIdLettino() {
+	public String getIdLettino() {
 		return this.idLettino;
 	}
 
@@ -14,7 +14,7 @@ public class Lettino {
 		return this.price;
 	}
 
-	public string getType() {
+	public String getType() {
 		// TODO - implement Lettino.getType
 		throw new UnsupportedOperationException();
 	}
@@ -23,7 +23,7 @@ public class Lettino {
 	 * 
 	 * @param idLettino
 	 */
-	public void setId(string idLettino) {
+	public void setId(String idLettino) {
 		// TODO - implement Lettino.setId
 		throw new UnsupportedOperationException();
 	}
@@ -40,7 +40,7 @@ public class Lettino {
 	 * 
 	 * @param lettinoType
 	 */
-	public void setType(string lettinoType) {
+	public void setType(String lettinoType) {
 		// TODO - implement Lettino.setType
 		throw new UnsupportedOperationException();
 	}

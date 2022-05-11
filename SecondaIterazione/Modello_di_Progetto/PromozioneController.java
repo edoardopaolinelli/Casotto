@@ -10,7 +10,7 @@ public class PromozioneController {
 	 * 
 	 * @param idPromozine
 	 */
-	public Promozione getPromozione(string idPromozine) {
+	public Promozione getPromozione(String idPromozine) {
 		// TODO - implement PromozioneController.getPromozione
 		throw new UnsupportedOperationException();
 	}

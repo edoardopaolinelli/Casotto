@@ -13,19 +13,19 @@ public interface OrdineService {
 	 * @param startOrder
 	 * @param endOrder
 	 */
-	Ordine createOrdine(string idOrdine, string idCliente, float price, List orderedDishes, Date startOrder, Date endOrder);
+	Ordine createOrdine(String idOrdine, String idCliente, float price, List orderedDishes, Date startOrder, Date endOrder);
 
 	/**
 	 * 
 	 * @param idOrdine
 	 */
-	void deleteOrdine(string idOrdine);
+	void deleteOrdine(String idOrdine);
 
 	/**
 	 * 
 	 * @param idOrdine
 	 */
-	Ordine getOrdine(string idOrdine);
+	Ordine getOrdine(String idOrdine);
 
 	List<Ordine> getAllOrdini();
 
@@ -34,14 +34,14 @@ public interface OrdineService {
 	 * @param idOrdine
 	 * @param idCliente
 	 */
-	void confirmOrdine(string idOrdine, string idCliente);
+	void confirmOrdine(String idOrdine, String idCliente);
 
 	/**
 	 * 
 	 * @param idOrdine
 	 * @param idCliente
 	 */
-	void declineOrdine(string idOrdine, string idCliente);
+	void declineOrdine(String idOrdine, String idCliente);
 
 	/**
 	 * 
@@ -49,7 +49,7 @@ public interface OrdineService {
 	 * @param idCliente
 	 * @param amount
 	 */
-	void addPiatto(long idPiatto, string idCliente, int amount);
+	void addPiatto(long idPiatto, String idCliente, int amount);
 
 	/**
 	 * 
@@ -57,7 +57,7 @@ public interface OrdineService {
 	 * @param idCliente
 	 * @param amount
 	 */
-	void removePiatto(long idPiatto, string idCliente, int amount);
+	void removePiatto(long idPiatto, String idCliente, int amount);
 
 	/**
 	 * 

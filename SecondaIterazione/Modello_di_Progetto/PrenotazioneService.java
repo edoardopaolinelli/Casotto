@@ -12,13 +12,13 @@ public interface PrenotazioneService {
 	 * @param endDate
 	 * @param prenotationType
 	 */
-	Prenotazione createPrenotazione(string idPrenotazione, string idUser, Date startDate, Date endDate, string prenotationType);
+	Prenotazione createPrenotazione(String idPrenotazione, String idUser, Date startDate, Date endDate, String prenotationType);
 
 	/**
 	 * 
 	 * @param idPrenotazione
 	 */
-	void deletePrenotazione(string idPrenotazione);
+	void deletePrenotazione(String idPrenotazione);
 
 	/**
 	 * 
@@ -32,13 +32,13 @@ public interface PrenotazioneService {
 	 * 
 	 * @param prenotazioneType
 	 */
-	List<Prenotazione> getPrenotazioniByType(string prenotazioneType);
+	List<Prenotazione> getPrenotazioniByType(String prenotazioneType);
 
 	/**
 	 * 
 	 * @param idCliente
 	 */
-	List<Prenotazione> getPrenotazioniByCliente(string idCliente);
+	List<Prenotazione> getPrenotazioniByCliente(String idCliente);
 
 	/**
 	 * 

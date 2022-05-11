@@ -8,7 +8,7 @@ public class GestoreOrdini {
 	 * 
 	 * @param idOrdine
 	 */
-	public Ordine getSingleOrder(string idOrdine) {
+	public Ordine getSingleOrder(String idOrdine) {
 		// TODO - implement GestoreOrdini.getSingleOrder
 		throw new UnsupportedOperationException();
 	}

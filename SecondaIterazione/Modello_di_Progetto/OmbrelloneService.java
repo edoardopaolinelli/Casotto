@@ -10,19 +10,19 @@ public interface OmbrelloneService {
 	 * @param price
 	 * @param type
 	 */
-	Ombrellone createOmbrellone(string idOmbrellone, float price, string type);
+	Ombrellone createOmbrellone(String idOmbrellone, float price, String type);
 
 	/**
 	 * 
 	 * @param idOmbrellone
 	 */
-	void deleteOmbrellone(string idOmbrellone);
+	void deleteOmbrellone(String idOmbrellone);
 
 	/**
 	 * 
 	 * @param idOmbrellone
 	 */
-	Ombrellone getOmbrellone(string idOmbrellone);
+	Ombrellone getOmbrellone(String idOmbrellone);
 
 	List<Ombrellone> getAllOmbrelloni();
 
@@ -30,6 +30,6 @@ public interface OmbrelloneService {
 	 * 
 	 * @param ombrelloneType
 	 */
-	List<Ombrellone> getOmbrelloniByType(string ombrelloneType);
+	List<Ombrellone> getOmbrelloniByType(String ombrelloneType);
 
 }

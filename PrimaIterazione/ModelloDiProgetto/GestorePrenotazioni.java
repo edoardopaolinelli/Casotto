@@ -8,7 +8,7 @@ public class GestorePrenotazioni {
 	 * 
 	 * @param idPrenotazione
 	 */
-	public Prenotazione getSinglePrenotazione(string idPrenotazione) {
+	public Prenotazione getSinglePrenotazione(String idPrenotazione) {
 		// TODO - implement GestorePrenotazioni.getSinglePrenotazione
 		throw new UnsupportedOperationException();
 	}
@@ -21,7 +21,7 @@ public class GestorePrenotazioni {
 	 * 
 	 * @param idCliente
 	 */
-	public List<Prenotazione> getPrenotazioniByUser(string idCliente) {
+	public List<Prenotazione> getPrenotazioniByUser(String idCliente) {
 		// TODO - implement GestorePrenotazioni.getPrenotazioniByUser
 		throw new UnsupportedOperationException();
 	}
@@ -30,7 +30,7 @@ public class GestorePrenotazioni {
 	 * 
 	 * @param type
 	 */
-	public List<Prenotazione> getPrenotazioniByType(string type) {
+	public List<Prenotazione> getPrenotazioniByType(String type) {
 		// TODO - implement GestorePrenotazioni.getPrenotazioniByType
 		throw new UnsupportedOperationException();
 	}
@@ -40,7 +40,7 @@ public class GestorePrenotazioni {
 	 * @param idCliente
 	 * @param type
 	 */
-	public List<Prenotazione> getPrenotazioniByUserAndType(string idCliente, string type) {
+	public List<Prenotazione> getPrenotazioniByUserAndType(String idCliente, String type) {
 		// TODO - implement GestorePrenotazioni.getPrenotazioniByUserAndType
 		throw new UnsupportedOperationException();
 	}

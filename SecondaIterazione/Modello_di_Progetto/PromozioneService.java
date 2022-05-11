@@ -12,19 +12,19 @@ public interface PromozioneService {
 	 * @param startDate
 	 * @param endDate
 	 */
-	Promozione createPromozione(string idPromozione, string name, string description, Date startDate, Date endDate);
+	Promozione createPromozione(String idPromozione, String name, String description, Date startDate, Date endDate);
 
 	/**
 	 * 
 	 * @param idPromozione
 	 */
-	void deletePromozione(string idPromozione);
+	void deletePromozione(String idPromozione);
 
 	/**
 	 * 
 	 * @param idPromozione
 	 */
-	Promozione getPromozione(string idPromozione);
+	Promozione getPromozione(String idPromozione);
 
 	List<Promozione> getAllPromozioni();
 

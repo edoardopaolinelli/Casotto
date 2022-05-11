@@ -16,7 +16,7 @@ public interface PrenotazioneRepository {
 	 * 
 	 * @param id
 	 */
-	Prenotazione findById(string id);
+	Prenotazione findById(String id);
 
 	/**
 	 * 

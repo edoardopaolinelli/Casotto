@@ -15,7 +15,7 @@ public class PromozioneServiceImpl implements PromozioneService {
 	 * @param startDate
 	 * @param endDate
 	 */
-	public Promozione createPromozione(string idPromozione, string name, string description, Date startDate, Date endDate) {
+	public Promozione createPromozione(String idPromozione, String name, String description, Date startDate, Date endDate) {
 		// TODO - implement PromozioneServiceImpl.createPromozione
 		throw new UnsupportedOperationException();
 	}
@@ -24,7 +24,7 @@ public class PromozioneServiceImpl implements PromozioneService {
 	 * 
 	 * @param idPromozione
 	 */
-	public void deletePromozione(string idPromozione) {
+	public void deletePromozione(String idPromozione) {
 		// TODO - implement PromozioneServiceImpl.deletePromozione
 		throw new UnsupportedOperationException();
 	}
@@ -33,7 +33,7 @@ public class PromozioneServiceImpl implements PromozioneService {
 	 * 
 	 * @param idPromozione
 	 */
-	public Promozione getPromozione(string idPromozione) {
+	public Promozione getPromozione(String idPromozione) {
 		// TODO - implement PromozioneServiceImpl.getPromozione
 		throw new UnsupportedOperationException();
 	}

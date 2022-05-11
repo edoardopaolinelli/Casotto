@@ -2,29 +2,29 @@ package PrimaIterazione.ModelloDiProgetto;
 
 public class Guest {
 
-	private string idGuest;
-	private string name;
-	private string surname;
-	private string email;
-	private string guestType;
+	private String idGuest;
+	private String name;
+	private String surname;
+	private String email;
+	private String guestType;
 
-	public string getIdGuest() {
+	public String getIdGuest() {
 		return this.idGuest;
 	}
 
-	public string getName() {
+	public String getName() {
 		return this.name;
 	}
 
-	public string getSurname() {
+	public String getSurname() {
 		return this.surname;
 	}
 
-	public string getEmail() {
+	public String getEmail() {
 		return this.email;
 	}
 
-	public string getGuestType() {
+	public String getGuestType() {
 		return this.guestType;
 	}
 
@@ -32,7 +32,7 @@ public class Guest {
 	 * 
 	 * @param idGuest
 	 */
-	public void setId(string idGuest) {
+	public void setId(String idGuest) {
 		// TODO - implement Guest.setId
 		throw new UnsupportedOperationException();
 	}
@@ -41,7 +41,7 @@ public class Guest {
 	 * 
 	 * @param name
 	 */
-	public void setName(string name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -49,7 +49,7 @@ public class Guest {
 	 * 
 	 * @param surname
 	 */
-	public void setSurname(string surname) {
+	public void setSurname(String surname) {
 		this.surname = surname;
 	}
 
@@ -57,7 +57,7 @@ public class Guest {
 	 * 
 	 * @param email
 	 */
-	public void setEmail(string email) {
+	public void setEmail(String email) {
 		this.email = email;
 	}
 
@@ -65,7 +65,7 @@ public class Guest {
 	 * 
 	 * @param guestType
 	 */
-	public void setGuestType(string guestType) {
+	public void setGuestType(String guestType) {
 		this.guestType = guestType;
 	}
 

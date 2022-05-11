@@ -8,7 +8,7 @@ public class GestoreLettini {
 	 * 
 	 * @param idLettino
 	 */
-	public Lettino getSingleLettino(string idLettino) {
+	public Lettino getSingleLettino(String idLettino) {
 		// TODO - implement GestoreLettini.getSingleLettino
 		throw new UnsupportedOperationException();
 	}

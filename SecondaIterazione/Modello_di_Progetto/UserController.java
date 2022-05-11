@@ -23,7 +23,7 @@ public class UserController {
 	 * @param email
 	 * @param password
 	 */
-	public void login(string email, string password) {
+	public void login(String email, String password) {
 		// TODO - implement UserController.login
 		throw new UnsupportedOperationException();
 	}

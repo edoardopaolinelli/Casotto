@@ -10,7 +10,7 @@ public class LettinoController {
 	 * 
 	 * @param idLettino
 	 */
-	public Lettino getLettino(string idLettino) {
+	public Lettino getLettino(String idLettino) {
 		// TODO - implement LettinoController.getLettino
 		throw new UnsupportedOperationException();
 	}

@@ -16,7 +16,7 @@ public interface OrdineRepository {
 	 * 
 	 * @param id
 	 */
-	Ordine findById(string id);
+	Ordine findById(String id);
 
 	/**
 	 * 

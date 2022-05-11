@@ -2,18 +2,18 @@ package PrimaIterazione.ModelloDiProgetto;
 
 public class Prenotazione {
 
-	private string idPrenotazione;
-	private string idCliente;
+	private String idPrenotazione;
+	private String idCliente;
 	private Date startDate;
 	private Date endDate;
 	private PrenotationType prenotationType;
 	private Object oggettoPrenotato;
 
-	public string getIdPrenotazione() {
+	public String getIdPrenotazione() {
 		return this.idPrenotazione;
 	}
 
-	public string getIdCliente() {
+	public String getIdCliente() {
 		return this.idCliente;
 	}
 
@@ -37,7 +37,7 @@ public class Prenotazione {
 	 * 
 	 * @param idPrenotazione
 	 */
-	public void setId(string idPrenotazione) {
+	public void setId(String idPrenotazione) {
 		// TODO - implement Prenotazione.setId
 		throw new UnsupportedOperationException();
 	}
@@ -46,7 +46,7 @@ public class Prenotazione {
 	 * 
 	 * @param idCliente
 	 */
-	public void setIdCliente(string idCliente) {
+	public void setIdCliente(String idCliente) {
 		this.idCliente = idCliente;
 	}
 
@@ -70,7 +70,7 @@ public class Prenotazione {
 	 * 
 	 * @param prenotationType
 	 */
-	public void setPrenotationType(string prenotationType) {
+	public void setPrenotationType(String prenotationType) {
 		// TODO - implement Prenotazione.setPrenotationType
 		throw new UnsupportedOperationException();
 	}

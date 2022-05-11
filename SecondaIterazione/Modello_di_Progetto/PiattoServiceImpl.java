@@ -13,7 +13,7 @@ public class PiattoServiceImpl implements PiattoService {
 	 * @param price
 	 * @param type
 	 */
-	public Piatto createPiatto(long idPiatto, string namePiatto, string description, float price, string type) {
+	public Piatto createPiatto(long idPiatto, String namePiatto, String description, float price, String type) {
 		// TODO - implement PiattoServiceImpl.createPiatto
 		throw new UnsupportedOperationException();
 	}
@@ -45,7 +45,7 @@ public class PiattoServiceImpl implements PiattoService {
 	 * 
 	 * @param type
 	 */
-	public List<Piatto> getPiattiByType(string type) {
+	public List<Piatto> getPiattiByType(String type) {
 		// TODO - implement PiattoServiceImpl.getPiattiByType
 		throw new UnsupportedOperationException();
 	}

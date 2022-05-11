@@ -10,19 +10,19 @@ public interface LettinoService {
 	 * @param price
 	 * @param type
 	 */
-	Lettino createLettino(string idLettino, float price, string type);
+	Lettino createLettino(String idLettino, float price, String type);
 
 	/**
 	 * 
 	 * @param idLettino
 	 */
-	void deleteLettino(string idLettino);
+	void deleteLettino(String idLettino);
 
 	/**
 	 * 
 	 * @param idLettino
 	 */
-	Lettino getLettino(string idLettino);
+	Lettino getLettino(String idLettino);
 
 	List<Lettino> getAllLettini();
 
@@ -30,6 +30,6 @@ public interface LettinoService {
 	 * 
 	 * @param lettinoType
 	 */
-	List<Lettino> getLettiniByType(string lettinoType);
+	List<Lettino> getLettiniByType(String lettinoType);
 
 }

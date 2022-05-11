@@ -16,7 +16,7 @@ public interface OmbrelloneRepository {
 	 * 
 	 * @param id
 	 */
-	Ombrellone findById(string id);
+	Ombrellone findById(String id);
 
 	/**
 	 * 

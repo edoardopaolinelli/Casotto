@@ -2,11 +2,11 @@ package PrimaIterazione.ModelloDiProgetto;
 
 public class Ombrellone {
 
-	private string idOmbrellone;
+	private String idOmbrellone;
 	private float price;
-	private string ombrelloneType;
+	private String ombrelloneType;
 
-	public string getIdOmbrellone() {
+	public String getIdOmbrellone() {
 		return this.idOmbrellone;
 	}
 
@@ -14,7 +14,7 @@ public class Ombrellone {
 		return this.price;
 	}
 
-	public string getType() {
+	public String getType() {
 		// TODO - implement Ombrellone.getType
 		throw new UnsupportedOperationException();
 	}
@@ -23,7 +23,7 @@ public class Ombrellone {
 	 * 
 	 * @param idOmbrellone
 	 */
-	public void setId(string idOmbrellone) {
+	public void setId(String idOmbrellone) {
 		// TODO - implement Ombrellone.setId
 		throw new UnsupportedOperationException();
 	}
@@ -40,7 +40,7 @@ public class Ombrellone {
 	 * 
 	 * @param ombrelloneType
 	 */
-	public void setType(string ombrelloneType) {
+	public void setType(String ombrelloneType) {
 		// TODO - implement Ombrellone.setType
 		throw new UnsupportedOperationException();
 	}

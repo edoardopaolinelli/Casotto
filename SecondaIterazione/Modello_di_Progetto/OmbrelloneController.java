@@ -10,7 +10,7 @@ public class OmbrelloneController {
 	 * 
 	 * @param idOmbrellone
 	 */
-	public Ombrellone getOmbrellone(string idOmbrellone) {
+	public Ombrellone getOmbrellone(String idOmbrellone) {
 		// TODO - implement OmbrelloneController.getOmbrellone
 		throw new UnsupportedOperationException();
 	}

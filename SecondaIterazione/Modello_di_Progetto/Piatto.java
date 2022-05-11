@@ -3,20 +3,20 @@ package SecondaIterazione.Modello_di_Progetto;
 public class Piatto {
 
 	private long id;
-	private string name;
-	private string description;
+	private String name;
+	private String description;
 	private float price;
-	private string piattoType;
+	private String piattoType;
 
 	public long getId() {
 		return this.id;
 	}
 
-	public string getName() {
+	public String getName() {
 		return this.name;
 	}
 
-	public string getDescription() {
+	public String getDescription() {
 		return this.description;
 	}
 
@@ -24,7 +24,7 @@ public class Piatto {
 		return this.price;
 	}
 
-	public string getType() {
+	public String getType() {
 		// TODO - implement Piatto.getType
 		throw new UnsupportedOperationException();
 	}
@@ -38,7 +38,7 @@ public class Piatto {
 	 * 
 	 * @param name
 	 */
-	public void setName(string name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -46,7 +46,7 @@ public class Piatto {
 	 * 
 	 * @param description
 	 */
-	public void setDescription(string description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 
@@ -62,7 +62,7 @@ public class Piatto {
 	 * 
 	 * @param piattoType
 	 */
-	public void setType(string piattoType) {
+	public void setType(String piattoType) {
 		// TODO - implement Piatto.setType
 		throw new UnsupportedOperationException();
 	}

@@ -6,7 +6,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 
 	private PrenotazioneRepository prenotazioneRepository;
 	private PrenotazioneService prenotazioneService;
-	private Attivit‡Service attivit‡Service;
+	private AttivitaService AttivitaService;
 	private OmbrelloneService ombrelloneService;
 	private LettinoService lettinoService;
 
@@ -18,7 +18,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * @param endDate
 	 * @param prenotationType
 	 */
-	public Prenotazione createPrenotazione(string idPrenotazione, string idUser, Date startDate, Date endDate, string prenotationType) {
+	public Prenotazione createPrenotazione(String idPrenotazione, String idUser, Date startDate, Date endDate, String prenotationType) {
 		// TODO - implement PrenotazioneServiceImpl.createPrenotazione
 		throw new UnsupportedOperationException();
 	}
@@ -27,7 +27,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * 
 	 * @param idPrenotazione
 	 */
-	public void deletePrenotazione(string idPrenotazione) {
+	public void deletePrenotazione(String idPrenotazione) {
 		// TODO - implement PrenotazioneServiceImpl.deletePrenotazione
 		throw new UnsupportedOperationException();
 	}
@@ -50,7 +50,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * 
 	 * @param prenotazioneType
 	 */
-	public List<Prenotazione> getPrenotazioniByType(string prenotazioneType) {
+	public List<Prenotazione> getPrenotazioniByType(String prenotazioneType) {
 		// TODO - implement PrenotazioneServiceImpl.getPrenotazioniByType
 		throw new UnsupportedOperationException();
 	}
@@ -59,7 +59,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * 
 	 * @param idCliente
 	 */
-	public List<Prenotazione> getPrenotazioniByCliente(string idCliente) {
+	public List<Prenotazione> getPrenotazioniByCliente(String idCliente) {
 		// TODO - implement PrenotazioneServiceImpl.getPrenotazioniByCliente
 		throw new UnsupportedOperationException();
 	}

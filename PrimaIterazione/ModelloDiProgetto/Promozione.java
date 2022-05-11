@@ -2,21 +2,21 @@ package PrimaIterazione.ModelloDiProgetto;
 
 public class Promozione {
 
-	private string idPromozione;
-	private string name;
-	private string description;
+	private String idPromozione;
+	private String name;
+	private String description;
 	private Date startDate;
 	private Date endDate;
 
-	public string getIdPromozione() {
+	public String getIdPromozione() {
 		return this.idPromozione;
 	}
 
-	public string getName() {
+	public String getName() {
 		return this.name;
 	}
 
-	public string getDescription() {
+	public String getDescription() {
 		return this.description;
 	}
 
@@ -32,7 +32,7 @@ public class Promozione {
 	 * 
 	 * @param idPromozione
 	 */
-	public void setId(string idPromozione) {
+	public void setId(String idPromozione) {
 		// TODO - implement Promozione.setId
 		throw new UnsupportedOperationException();
 	}
@@ -41,7 +41,7 @@ public class Promozione {
 	 * 
 	 * @param name
 	 */
-	public void setName(string name) {
+	public void setName(String name) {
 		this.name = name;
 	}
 
@@ -49,7 +49,7 @@ public class Promozione {
 	 * 
 	 * @param description
 	 */
-	public void setDescription(string description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
 

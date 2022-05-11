@@ -8,7 +8,7 @@ public class GestorePromozioni {
 	 * 
 	 * @param idPromozione
 	 */
-	public Promozione getSinglePromozione(string idPromozione) {
+	public Promozione getSinglePromozione(String idPromozione) {
 		// TODO - implement GestorePromozioni.getSinglePromozione
 		throw new UnsupportedOperationException();
 	}

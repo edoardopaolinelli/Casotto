@@ -10,7 +10,7 @@ public class OrdineController {
 	 * 
 	 * @param idOrdine
 	 */
-	public Ordine getOrdine(string idOrdine) {
+	public Ordine getOrdine(String idOrdine) {
 		// TODO - implement OrdineController.getOrdine
 		throw new UnsupportedOperationException();
 	}

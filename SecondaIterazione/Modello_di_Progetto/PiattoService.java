@@ -10,7 +10,7 @@ public interface PiattoService {
 	 * @param price
 	 * @param type
 	 */
-	Piatto createPiatto(long idPiatto, string namePiatto, string description, float price, string type);
+	Piatto createPiatto(long idPiatto, String namePiatto, String description, float price, String type);
 
 	/**
 	 * 
@@ -30,6 +30,6 @@ public interface PiattoService {
 	 * 
 	 * @param type
 	 */
-	List<Piatto> getPiattiByType(string type);
+	List<Piatto> getPiattiByType(String type);
 
 }

@@ -13,7 +13,7 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * @param price
 	 * @param type
 	 */
-	public Ombrellone createOmbrellone(string idOmbrellone, float price, string type) {
+	public Ombrellone createOmbrellone(String idOmbrellone, float price, String type) {
 		// TODO - implement OmbrelloneServiceImpl.createOmbrellone
 		throw new UnsupportedOperationException();
 	}
@@ -22,7 +22,7 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * 
 	 * @param idOmbrellone
 	 */
-	public void deleteOmbrellone(string idOmbrellone) {
+	public void deleteOmbrellone(String idOmbrellone) {
 		// TODO - implement OmbrelloneServiceImpl.deleteOmbrellone
 		throw new UnsupportedOperationException();
 	}
@@ -31,7 +31,7 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * 
 	 * @param idOmbrellone
 	 */
-	public Ombrellone getOmbrellone(string idOmbrellone) {
+	public Ombrellone getOmbrellone(String idOmbrellone) {
 		// TODO - implement OmbrelloneServiceImpl.getOmbrellone
 		throw new UnsupportedOperationException();
 	}
@@ -45,7 +45,7 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * 
 	 * @param ombrelloneType
 	 */
-	public List<Ombrellone> getOmbrelloniByType(string ombrelloneType) {
+	public List<Ombrellone> getOmbrelloniByType(String ombrelloneType) {
 		// TODO - implement OmbrelloneServiceImpl.getOmbrelloniByType
 		throw new UnsupportedOperationException();
 	}

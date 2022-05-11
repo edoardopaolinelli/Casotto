@@ -10,7 +10,7 @@ public class PrenotazioneController {
 	 * 
 	 * @param idPrenotazione
 	 */
-	public Prenotazione getPrenotazione(string idPrenotazione) {
+	public Prenotazione getPrenotazione(String idPrenotazione) {
 		// TODO - implement PrenotazioneController.getPrenotazione
 		throw new UnsupportedOperationException();
 	}

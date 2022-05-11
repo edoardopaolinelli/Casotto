@@ -16,7 +16,7 @@ public interface UserRepository {
 	 * 
 	 * @param id
 	 */
-	Guest findById(string id);
+	Guest findById(String id);
 
 	/**
 	 * 
