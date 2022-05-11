@@ -1,6 +1,7 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+import java.time.LocalDate;
+import java.util.List;
 
 public class PromozioneServiceImpl implements PromozioneService {
 
@@ -15,7 +16,7 @@ public class PromozioneServiceImpl implements PromozioneService {
 	 * @param startDate
 	 * @param endDate
 	 */
-	public Promozione createPromozione(String idPromozione, String name, String description, Date startDate, Date endDate) {
+	public Promozione createPromozione(String idPromozione, String name, String description, LocalDate startDate, LocalDate endDate) {
 		// TODO - implement PromozioneServiceImpl.createPromozione
 		throw new UnsupportedOperationException();
 	}
@@ -47,7 +48,7 @@ public class PromozioneServiceImpl implements PromozioneService {
 	 * 
 	 * @param startDate
 	 */
-	public List<Promozione> getPromozioniByStartDate(Date startDate) {
+	public List<Promozione> getPromozioniByStartDate(LocalDate startDate) {
 		// TODO - implement PromozioneServiceImpl.getPromozioniByStartDate
 		throw new UnsupportedOperationException();
 	}

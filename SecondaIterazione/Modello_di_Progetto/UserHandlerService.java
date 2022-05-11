@@ -1,5 +1,7 @@
 package SecondaIterazione.Modello_di_Progetto;
 
+import java.util.List;
+
 public interface UserHandlerService {
 
 	/**
@@ -26,7 +28,7 @@ public interface UserHandlerService {
 	 */
 	void signin(int type, String name, String surname, String email, String password);
 
-	List<User> getAllUsers();
+	List<Guest> getAllUsers();
 
 	/**
 	 * 

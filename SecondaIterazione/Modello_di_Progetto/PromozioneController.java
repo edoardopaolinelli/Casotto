@@ -1,10 +1,10 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+import java.util.List;
 
 public class PromozioneController {
 
-	private promozioneService promozioneService;
+	private PromozioneService promozioneService;
 
 	/**
 	 * 

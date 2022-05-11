@@ -1,10 +1,11 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+
+import java.util.List;
 
 public class OmbrelloneController {
 
-	private ombrelloneService ombrelloneService;
+	private OmbrelloneService ombrelloneService;
 
 	/**
 	 * 
@@ -24,7 +25,7 @@ public class OmbrelloneController {
 	 * 
 	 * @param o
 	 */
-	public volid addOmbrellone(Ombrellone o) {
+	public void addOmbrellone(Ombrellone o) {
 		// TODO - implement OmbrelloneController.addOmbrellone
 		throw new UnsupportedOperationException();
 	}

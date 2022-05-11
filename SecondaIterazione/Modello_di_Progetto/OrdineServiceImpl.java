@@ -1,6 +1,7 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+import java.time.LocalDate;
+import java.util.List;
 
 public class OrdineServiceImpl implements OrdineService {
 
@@ -17,7 +18,7 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param startOrder
 	 * @param endOrder
 	 */
-	public Ordine createOrdine(String idOrdine, String idCliente, float price, List orderedDishes, Date startOrder, Date endOrder) {
+	public Ordine createOrdine(String idOrdine, String idCliente, float price, List orderedDishes, LocalDate startOrder, LocalDate endOrder) {
 		// TODO - implement OrdineServiceImpl.createOrdine
 		throw new UnsupportedOperationException();
 	}
@@ -109,9 +110,9 @@ public class OrdineServiceImpl implements OrdineService {
 
 	/**
 	 * 
-	 * @param Date
+	 * @param date
 	 */
-	public List<Ordine> getOrdiniByDate(date Date) {
+	public List<Ordine> getOrdiniByDate(LocalDate date) {
 		// TODO - implement OrdineServiceImpl.getOrdiniByDate
 		throw new UnsupportedOperationException();
 	}

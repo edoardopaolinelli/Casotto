@@ -1,22 +1,22 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+import java.util.List;
 
 public class AttivitaController {
 
-	private attivitaService attivitaService;
+	private AttivitaService attivitaService;
 
 	/**
-	 * 
+	 *
 	 * @param idAttivita
 	 */
 	public Attivita getAttivita(Attivita idAttivita) {
-		// TODO - implement AttivitàController.getAttività
+		// TODO - implement Attivitï¿½Controller.getAttivitï¿½
 		throw new UnsupportedOperationException();
 	}
 
 	public List<Attivita> getAllAttivita() {
-		// TODO - implement AttivitàController.getAllAttività
+		// TODO - implement Attivitï¿½Controller.getAllAttivitï¿½
 		throw new UnsupportedOperationException();
 	}
 
@@ -25,7 +25,7 @@ public class AttivitaController {
 	 * @param a
 	 */
 	public void addAttivita(Attivita a) {
-		// TODO - implement AttivitàController.addAttività
+		// TODO - implement Attivitï¿½Controller.addAttivitï¿½
 		throw new UnsupportedOperationException();
 	}
 
@@ -34,7 +34,7 @@ public class AttivitaController {
 	 * @param a
 	 */
 	public void removeAttivita(Attivita a) {
-		// TODO - implement AttivitàController.removeAttività
+		// TODO - implement Attivitï¿½Controller.removeAttivitï¿½
 		throw new UnsupportedOperationException();
 	}
 

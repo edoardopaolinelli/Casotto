@@ -1,5 +1,7 @@
 package SecondaIterazione.Modello_di_Progetto;
 
+import java.util.List;
+
 public class PiattoServiceImpl implements PiattoService {
 
 	private PiattoRepository piattoRepository;

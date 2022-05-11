@@ -1,10 +1,10 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+import java.util.List;
 
 public class PrenotazioneController {
 
-	private prenotazioneService prenotazioneService;
+	private PrenotazioneService prenotazioneService;
 
 	/**
 	 * 

@@ -1,6 +1,8 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
 public interface AttivitaService {
 
@@ -14,7 +16,7 @@ public interface AttivitaService {
 	 * @param date
 	 * @param hour
 	 */
-	Attivita createAttivita(String idAttivita, String name, String description, int maxPartecipants, int actualPartecipants, Date date, Hour hour);
+	Attivita createAttivita(String idAttivita, String name, String description, int maxPartecipants, int actualPartecipants, LocalDate date, LocalTime hour);
 
 	/**
 	 * 
@@ -46,6 +48,6 @@ public interface AttivitaService {
 	 * 
 	 * @param date
 	 */
-	List<Attivita> getAttivitaByDate(Date date);
+	List<Attivita> getAttivitaByDate(LocalDate date);
 
 }

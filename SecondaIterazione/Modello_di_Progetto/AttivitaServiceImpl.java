@@ -1,6 +1,9 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.util.List;
 
 public class AttivitaServiceImpl implements AttivitaService {
 
@@ -17,8 +20,8 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param date
 	 * @param hour
 	 */
-	public Attivita createAttivita(String idAttivita, String name, String description, int maxPartecipants, int actualPartecipants, Date date, Hour hour) {
-		// TODO - implement AttivitàServiceImpl.createAttività
+	public Attivita createAttivita(String idAttivita, String name, String description, int maxPartecipants, int actualPartecipants, LocalDate date, LocalTime hour) {
+		// TODO - implement Attivitï¿½ServiceImpl.createAttivitï¿½
 		throw new UnsupportedOperationException();
 	}
 
@@ -27,7 +30,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param idAttivita
 	 */
 	public void deleteAttivita(String idAttivita) {
-		// TODO - implement AttivitàServiceImpl.deleteAttività
+		// TODO - implement Attivitï¿½ServiceImpl.deleteAttivitï¿½
 		throw new UnsupportedOperationException();
 	}
 
@@ -36,12 +39,12 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param idAttivita
 	 */
 	public Attivita getAttivita(String idAttivita) {
-		// TODO - implement AttivitàServiceImpl.getAttività
+		// TODO - implement Attivitï¿½ServiceImpl.getAttivitï¿½
 		throw new UnsupportedOperationException();
 	}
 
 	public List<Attivita> getAllAttivita() {
-		// TODO - implement AttivitàServiceImpl.getAllAttività
+		// TODO - implement Attivitï¿½ServiceImpl.getAllAttivitï¿½
 		throw new UnsupportedOperationException();
 	}
 
@@ -50,7 +53,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param idCliente
 	 */
 	public void addCliente(String idCliente) {
-		// TODO - implement AttivitàServiceImpl.addCliente
+		// TODO - implement Attivitï¿½ServiceImpl.addCliente
 		throw new UnsupportedOperationException();
 	}
 
@@ -59,7 +62,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param idCliente
 	 */
 	public void removeCliente(String idCliente) {
-		// TODO - implement AttivitàServiceImpl.removeCliente
+		// TODO - implement Attivitï¿½ServiceImpl.removeCliente
 		throw new UnsupportedOperationException();
 	}
 
@@ -67,8 +70,8 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * 
 	 * @param date
 	 */
-	public List<Attivita> getAttivitaByDate(Date date) {
-		// TODO - implement AttivitàServiceImpl.getAttivitàByDate
+	public List<Attivita> getAttivitaByDate(LocalDate date) {
+		// TODO - implement Attivitï¿½ServiceImpl.getAttivitï¿½ByDate
 		throw new UnsupportedOperationException();
 	}
 

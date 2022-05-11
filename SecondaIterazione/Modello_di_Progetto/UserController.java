@@ -1,5 +1,7 @@
 package SecondaIterazione.Modello_di_Progetto;
 
+import java.util.List;
+
 public class UserController {
 
 	private UserHandlerService userHandlerService;
@@ -8,12 +10,12 @@ public class UserController {
 	 * 
 	 * @param idUser
 	 */
-	public User getUser(int idUser) {
+	public Guest getUser(int idUser) {
 		// TODO - implement UserController.getUser
 		throw new UnsupportedOperationException();
 	}
 
-	public List<User> getAllUsers() {
+	public List<Guest> getAllUsers() {
 		// TODO - implement UserController.getAllUsers
 		throw new UnsupportedOperationException();
 	}
@@ -32,7 +34,7 @@ public class UserController {
 	 * 
 	 * @param u
 	 */
-	public void addUser(User u) {
+	public void addUser(Guest u) {
 		// TODO - implement UserController.addUser
 		throw new UnsupportedOperationException();
 	}
@@ -41,7 +43,7 @@ public class UserController {
 	 * 
 	 * @param u
 	 */
-	public void removeUser(User u) {
+	public void removeUser(Guest u) {
 		// TODO - implement UserController.removeUser
 		throw new UnsupportedOperationException();
 	}
