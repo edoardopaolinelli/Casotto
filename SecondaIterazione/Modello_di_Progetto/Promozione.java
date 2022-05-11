@@ -1,12 +1,14 @@
 package SecondaIterazione.Modello_di_Progetto;
 
+import java.time.LocalDate;
+
 public class Promozione {
 
 	private String idPromozione;
 	private String name;
 	private String description;
-	private Date startDate;
-	private Date endDate;
+	private LocalDate startDate;
+	private LocalDate endDate;
 
 	public String getIdPromozione() {
 		return this.idPromozione;
@@ -20,11 +22,11 @@ public class Promozione {
 		return this.description;
 	}
 
-	public Date getStartDate() {
+	public LocalDate getStartDate() {
 		return this.startDate;
 	}
 
-	public Date getEndDate() {
+	public LocalDate getEndDate() {
 		return this.endDate;
 	}
 
@@ -57,7 +59,7 @@ public class Promozione {
 	 * 
 	 * @param startDate
 	 */
-	public void setStartDate(Date startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 
@@ -65,7 +67,7 @@ public class Promozione {
 	 * 
 	 * @param endDate
 	 */
-	public void setEndDate(Date endDate) {
+	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
 

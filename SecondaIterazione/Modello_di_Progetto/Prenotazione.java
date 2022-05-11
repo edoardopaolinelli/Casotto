@@ -1,12 +1,14 @@
 package SecondaIterazione.Modello_di_Progetto;
 
+import java.time.LocalDate;
+
 public class Prenotazione {
 
 	private String idPrenotazione;
 	private String idCliente;
-	private Date startDate;
-	private Date endDate;
-	private PrenotationType prenotationType;
+	private LocalDate startDate;
+	private LocalDate endDate;
+	private String prenotationType;
 	private Object oggettoPrenotato;
 
 	public String getIdPrenotazione() {
@@ -17,15 +19,15 @@ public class Prenotazione {
 		return this.idCliente;
 	}
 
-	public Date getStartDate() {
+	public LocalDate getStartDate() {
 		return this.startDate;
 	}
 
-	public Date getEndDate() {
+	public LocalDate getEndDate() {
 		return this.endDate;
 	}
 
-	public PrenotationType getPrenotationType() {
+	public String getPrenotationType() {
 		return this.prenotationType;
 	}
 
@@ -54,7 +56,7 @@ public class Prenotazione {
 	 * 
 	 * @param startDate
 	 */
-	public void setStartDate(Date startDate) {
+	public void setStartDate(LocalDate startDate) {
 		this.startDate = startDate;
 	}
 
@@ -62,7 +64,7 @@ public class Prenotazione {
 	 * 
 	 * @param endDate
 	 */
-	public void setEndDate(Date endDate) {
+	public void setEndDate(LocalDate endDate) {
 		this.endDate = endDate;
 	}
 

@@ -1,6 +1,6 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+import java.util.List;
 
 public interface PromozioneRepository {
 
@@ -10,7 +10,7 @@ public interface PromozioneRepository {
 	 */
 	void save(Promozione p);
 
-	List<Promozioni> findAll();
+	List<Promozione> findAll();
 
 	/**
 	 * 

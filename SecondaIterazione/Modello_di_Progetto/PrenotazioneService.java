@@ -1,6 +1,7 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+import java.time.LocalDate;
+import java.util.List;
 
 public interface PrenotazioneService {
 
@@ -12,7 +13,7 @@ public interface PrenotazioneService {
 	 * @param endDate
 	 * @param prenotationType
 	 */
-	Prenotazione createPrenotazione(String idPrenotazione, String idUser, Date startDate, Date endDate, String prenotationType);
+	Prenotazione createPrenotazione(String idPrenotazione, String idUser, LocalDate startDate, LocalDate endDate, String prenotationType);
 
 	/**
 	 * 
@@ -44,6 +45,6 @@ public interface PrenotazioneService {
 	 * 
 	 * @param startDate
 	 */
-	List<Prenotazione> getPrenotazionyByStartDate(Date startDate);
+	List<Prenotazione> getPrenotazionyByStartDate(LocalDate startDate);
 
 }

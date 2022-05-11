@@ -1,5 +1,7 @@
 package SecondaIterazione.Modello_di_Progetto;
 
+import java.util.List;
+
 public class UserHandlerServiceImpl implements UserHandlerService {
 
 	private UserHandlerService userHandlerService;
@@ -37,7 +39,7 @@ public class UserHandlerServiceImpl implements UserHandlerService {
 		throw new UnsupportedOperationException();
 	}
 
-	public List<User> getAllUsers() {
+	public List<Guest> getAllUsers() {
 		// TODO - implement UserHandlerServiceImpl.getAllUsers
 		throw new UnsupportedOperationException();
 	}

@@ -1,8 +1,10 @@
 package SecondaIterazione.Modello_di_Progetto;
 
+import java.util.List;
+
 public class PiattoController {
 
-	private piattoService piattoService;
+	private PiattoService piattoService;
 
 	/**
 	 * 

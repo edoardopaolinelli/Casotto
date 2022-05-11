@@ -1,6 +1,7 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+import java.time.LocalDate;
+import java.util.List;
 
 public class PrenotazioneServiceImpl implements PrenotazioneService {
 
@@ -18,7 +19,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * @param endDate
 	 * @param prenotationType
 	 */
-	public Prenotazione createPrenotazione(String idPrenotazione, String idUser, Date startDate, Date endDate, String prenotationType) {
+	public Prenotazione createPrenotazione(String idPrenotazione, String idUser, LocalDate startDate, LocalDate endDate, String prenotationType) {
 		// TODO - implement PrenotazioneServiceImpl.createPrenotazione
 		throw new UnsupportedOperationException();
 	}
@@ -68,7 +69,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * 
 	 * @param startDate
 	 */
-	public List<Prenotazione> getPrenotazionyByStartDate(Date startDate) {
+	public List<Prenotazione> getPrenotazionyByStartDate(LocalDate startDate) {
 		// TODO - implement PrenotazioneServiceImpl.getPrenotazionyByStartDate
 		throw new UnsupportedOperationException();
 	}

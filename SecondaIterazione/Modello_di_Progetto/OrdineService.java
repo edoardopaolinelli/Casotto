@@ -1,6 +1,7 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+import java.time.LocalDate;
+import java.util.List;
 
 public interface OrdineService {
 
@@ -13,7 +14,7 @@ public interface OrdineService {
 	 * @param startOrder
 	 * @param endOrder
 	 */
-	Ordine createOrdine(String idOrdine, String idCliente, float price, List orderedDishes, Date startOrder, Date endOrder);
+	Ordine createOrdine(String idOrdine, String idCliente, float price, List orderedDishes, LocalDate startOrder, LocalDate endOrder);
 
 	/**
 	 * 
@@ -75,8 +76,8 @@ public interface OrdineService {
 
 	/**
 	 * 
-	 * @param Date
+	 * @param date
 	 */
-	List<Ordine> getOrdiniByDate(date Date);
+	List<Ordine> getOrdiniByDate(LocalDate date);
 
 }

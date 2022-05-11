@@ -1,5 +1,8 @@
 package SecondaIterazione.Modello_di_Progetto;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 public class Attivita {
 
 	private String idAttivita;
@@ -7,8 +10,8 @@ public class Attivita {
 	private String description;
 	private int maxParticipants;
 	private int actualParticipants;
-	private Date date;
-	private Hour hour;
+	private LocalDate date;
+	private LocalTime hour;
 
 	public String getIdAttivita() {
 		return this.idAttivita;
@@ -30,11 +33,11 @@ public class Attivita {
 		return this.actualParticipants;
 	}
 
-	public Date getDate() {
+	public LocalDate getDate() {
 		return this.date;
 	}
 
-	public Hour getHour() {
+	public LocalTime getHour() {
 		return this.hour;
 	}
 
@@ -85,7 +88,7 @@ public class Attivita {
 	 * 
 	 * @param date
 	 */
-	public void setDate(Date date) {
+	public void setDate(LocalDate date) {
 		this.date = date;
 	}
 
@@ -93,7 +96,7 @@ public class Attivita {
 	 * 
 	 * @param hour
 	 */
-	public void setHour(Hour hour) {
+	public void setHour(LocalTime hour) {
 		this.hour = hour;
 	}
 

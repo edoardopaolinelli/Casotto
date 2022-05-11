@@ -1,6 +1,8 @@
 package SecondaIterazione.Modello_di_Progetto;
 
-import PrimaIterazione.ModelloDiProgetto.*;
+
+import java.time.LocalDate;
+import java.util.List;
 
 public interface PromozioneService {
 
@@ -12,7 +14,7 @@ public interface PromozioneService {
 	 * @param startDate
 	 * @param endDate
 	 */
-	Promozione createPromozione(String idPromozione, String name, String description, Date startDate, Date endDate);
+	Promozione createPromozione(String idPromozione, String name, String description, LocalDate startDate, LocalDate endDate);
 
 	/**
 	 * 
@@ -32,6 +34,6 @@ public interface PromozioneService {
 	 * 
 	 * @param startDate
 	 */
-	List<Promozione> getPromozioniByStartDate(Date startDate);
+	List<Promozione> getPromozioniByStartDate(LocalDate startDate);
 
 }
