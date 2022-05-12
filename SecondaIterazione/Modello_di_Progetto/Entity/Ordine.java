@@ -1,6 +1,7 @@
-package PrimaIterazione.ModelloDiProgetto;
+package SecondaIterazione.Modello_di_Progetto.Entity;
 
-import SecondaIterazione.Modello_di_Progetto.Entity.Piatto;
+import java.time.LocalDate;
+import java.util.List;
 
 public class Ordine {
 
@@ -8,8 +9,8 @@ public class Ordine {
 	private float price;
 	private List<Piatto> orderedDishes;
 	private String idCliente;
-	private Date startOrder;
-	private Date endOrder;
+	private LocalDate startOrder;
+	private LocalDate endOrder;
 
 	public String getIdOrdine() {
 		return this.idOrdine;
@@ -23,16 +24,15 @@ public class Ordine {
 		return this.price;
 	}
 
-	public List getOrderedDishes() {
-		// TODO - implement Ordine.getOrderedDishes
-		throw new UnsupportedOperationException();
+	public List<Piatto> getOrderedDishes() {
+		return this.orderedDishes;
 	}
 
-	public Date getStartOrder() {
+	public LocalDate getStartOrder() {
 		return this.startOrder;
 	}
 
-	public Date getEndOrder() {
+	public LocalDate getEndOrder() {
 		return this.endOrder;
 	}
 
@@ -72,7 +72,7 @@ public class Ordine {
 	 * 
 	 * @param startOrder
 	 */
-	public void setStartOrder(Date startOrder) {
+	public void setStartOrder(LocalDate startOrder) {
 		this.startOrder = startOrder;
 	}
 
@@ -80,7 +80,7 @@ public class Ordine {
 	 * 
 	 * @param endOrder
 	 */
-	public void setEndOrder(Date endOrder) {
+	public void setEndOrder(LocalDate endOrder) {
 		this.endOrder = endOrder;
 	}
 

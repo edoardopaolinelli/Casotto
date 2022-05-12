@@ -1,8 +1,10 @@
 package PrimaIterazione.ModelloDiProgetto;
 
+import java.util.List;
+
 public class GestoreLettini {
 
-	private List<Lettini> lettini;
+	private List<Lettino> lettini;
 
 	/**
 	 * 
