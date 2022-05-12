@@ -2,7 +2,7 @@ package PrimaIterazione.ModelloDiProgetto;
 
 public class GestoreOmbrelloni {
 
-	private List<Ombrelloni> ombrelloni;
+	private List<Ombrellone> ombrelloni;
 
 	/**
 	 * 
