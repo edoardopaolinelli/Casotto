@@ -21,7 +21,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param hour
 	 */
 	public Attivita createAttivita(String idAttivita, String name, String description, int maxPartecipants, int actualPartecipants, LocalDate date, LocalTime hour) {
-		// TODO - implement Attivit�ServiceImpl.createAttivit�
+		// TODO - implement AttivitaServiceImpl.createAttivita
 		throw new UnsupportedOperationException();
 	}
 
@@ -30,7 +30,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param idAttivita
 	 */
 	public void deleteAttivita(String idAttivita) {
-		// TODO - implement Attivit�ServiceImpl.deleteAttivit�
+		// TODO - implement AttivitaServiceImpl.deleteAttivita
 		throw new UnsupportedOperationException();
 	}
 
@@ -39,12 +39,12 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param idAttivita
 	 */
 	public Attivita getAttivita(String idAttivita) {
-		// TODO - implement Attivit�ServiceImpl.getAttivit�
+		// TODO - implement AttivitaServiceImpl.getAttivita
 		throw new UnsupportedOperationException();
 	}
 
 	public List<Attivita> getAllAttivita() {
-		// TODO - implement Attivit�ServiceImpl.getAllAttivit�
+		// TODO - implement AttivitaServiceImpl.getAllAttivita
 		throw new UnsupportedOperationException();
 	}
 
@@ -53,7 +53,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param idCliente
 	 */
 	public void addCliente(String idCliente) {
-		// TODO - implement Attivit�ServiceImpl.addCliente
+		// TODO - implement AttivitaServiceImpl.addCliente
 		throw new UnsupportedOperationException();
 	}
 
@@ -62,7 +62,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param idCliente
 	 */
 	public void removeCliente(String idCliente) {
-		// TODO - implement Attivit�ServiceImpl.removeCliente
+		// TODO - implement AttivitaServiceImpl.removeCliente
 		throw new UnsupportedOperationException();
 	}
 
@@ -71,7 +71,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param date
 	 */
 	public List<Attivita> getAttivitaByDate(LocalDate date) {
-		// TODO - implement Attivit�ServiceImpl.getAttivit�ByDate
+		// TODO - implement AttivitaServiceImpl.getAttivit�ByDate
 		throw new UnsupportedOperationException();
 	}
 

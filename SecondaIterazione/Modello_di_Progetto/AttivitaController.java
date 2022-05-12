@@ -11,12 +11,12 @@ public class AttivitaController {
 	 * @param idAttivita
 	 */
 	public Attivita getAttivita(Attivita idAttivita) {
-		// TODO - implement Attivit�Controller.getAttivit�
+		// TODO - implement AttivitaController.getAttivita
 		throw new UnsupportedOperationException();
 	}
 
 	public List<Attivita> getAllAttivita() {
-		// TODO - implement Attivit�Controller.getAllAttivit�
+		// TODO - implement AttivitaController.getAllAttivita
 		throw new UnsupportedOperationException();
 	}
 
@@ -25,7 +25,7 @@ public class AttivitaController {
 	 * @param a
 	 */
 	public void addAttivita(Attivita a) {
-		// TODO - implement Attivit�Controller.addAttivit�
+		// TODO - implement AttivitaController.addAttivita
 		throw new UnsupportedOperationException();
 	}
 
@@ -34,7 +34,7 @@ public class AttivitaController {
 	 * @param a
 	 */
 	public void removeAttivita(Attivita a) {
-		// TODO - implement Attivit�Controller.removeAttivit�
+		// TODO - implement AttivitaController.removeAttivita
 		throw new UnsupportedOperationException();
 	}
 
