@@ -14,8 +14,8 @@ public class LettinoController {
 	 * @param idLettino
 	 */
 	public Lettino getLettino(String idLettino) {
-		// TODO - implement LettinoController.getLettino
-		throw new UnsupportedOperationException();
+
+		return null;
 	}
 
 	public List<Lettino> getAllLettini() {
