@@ -40,8 +40,7 @@ public class Prenotazione {
 	 * @param idPrenotazione
 	 */
 	public void setId(String idPrenotazione) {
-		// TODO - implement Prenotazione.setId
-		throw new UnsupportedOperationException();
+		this.idPrenotazione = idPrenotazione;
 	}
 
 	/**
@@ -73,8 +72,7 @@ public class Prenotazione {
 	 * @param prenotationType
 	 */
 	public void setPrenotationType(String prenotationType) {
-		// TODO - implement Prenotazione.setPrenotationType
-		throw new UnsupportedOperationException();
+		this.prenotationType = prenotationType;
 	}
 
 	/**
