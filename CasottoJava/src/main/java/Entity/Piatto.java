@@ -25,13 +25,11 @@ public class Piatto {
 	}
 
 	public String getType() {
-		// TODO - implement Piatto.getType
-		throw new UnsupportedOperationException();
+		return this.piattoType;
 	}
 
-	public long setId() {
-		// TODO - implement Piatto.setId
-		throw new UnsupportedOperationException();
+	public void setId() {
+		this.id = id;
 	}
 
 	/**
@@ -63,8 +61,7 @@ public class Piatto {
 	 * @param piattoType
 	 */
 	public void setType(String piattoType) {
-		// TODO - implement Piatto.setType
-		throw new UnsupportedOperationException();
+		this.piattoType = piattoType;
 	}
 
 }
