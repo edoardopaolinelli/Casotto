@@ -27,7 +27,6 @@ public class LettinoServiceImpl implements LettinoService {
 	 */
 	public void deleteLettino(String idLettino) {
 		// TODO - implement LettinoServiceImpl.deleteLettino
-		throw new UnsupportedOperationException();
 	}
 
 	/**

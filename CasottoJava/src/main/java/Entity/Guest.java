@@ -33,8 +33,7 @@ public class Guest {
 	 * @param idGuest
 	 */
 	public void setId(String idGuest) {
-		// TODO - implement Guest.setId
-		throw new UnsupportedOperationException();
+		this.idGuest = idGuest;
 	}
 
 	/**

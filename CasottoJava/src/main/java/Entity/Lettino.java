@@ -4,6 +4,7 @@ public class Lettino {
 
 	private String idLettino;
 	private float price;
+
 	private String lettinoType;
 
 	public String getIdLettino() {
@@ -15,8 +16,7 @@ public class Lettino {
 	}
 
 	public String getType() {
-		// TODO - implement Lettino.getType
-		throw new UnsupportedOperationException();
+		return this.lettinoType;
 	}
 
 	/**
@@ -24,8 +24,7 @@ public class Lettino {
 	 * @param idLettino
 	 */
 	public void setId(String idLettino) {
-		// TODO - implement Lettino.setId
-		throw new UnsupportedOperationException();
+		this.idLettino = idLettino;
 	}
 
 	/**
@@ -41,8 +40,7 @@ public class Lettino {
 	 * @param lettinoType
 	 */
 	public void setType(String lettinoType) {
-		// TODO - implement Lettino.setType
-		throw new UnsupportedOperationException();
+		this.lettinoType = lettinoType;
 	}
 
 }

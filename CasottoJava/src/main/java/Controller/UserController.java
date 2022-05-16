@@ -14,13 +14,11 @@ public class UserController {
 	 * @param idUser
 	 */
 	public Guest getUser(int idUser) {
-		// TODO - implement UserController.getUser
-		throw new UnsupportedOperationException();
+		return this.userHandlerService.getAllUsers().get(idUser);
 	}
 
 	public List<Guest> getAllUsers() {
-		// TODO - implement UserController.getAllUsers
-		throw new UnsupportedOperationException();
+		return userHandlerService.getAllUsers();
 	}
 
 	/**
@@ -29,8 +27,11 @@ public class UserController {
 	 * @param password
 	 */
 	public void login(String email, String password) {
-		// TODO - implement UserController.login
-		throw new UnsupportedOperationException();
+		try {
+			return userHandlerService.login(email,password);
+		}catch(Exception e){
+
+		}
 	}
 
 	/**
@@ -38,8 +39,7 @@ public class UserController {
 	 * @param u
 	 */
 	public void addUser(Guest u) {
-		// TODO - implement UserController.addUser
-		throw new UnsupportedOperationException();
+		userHandlerService.add(u);
 	}
 
 	/**
@@ -47,8 +47,7 @@ public class UserController {
 	 * @param u
 	 */
 	public void removeUser(Guest u) {
-		// TODO - implement UserController.removeUser
-		throw new UnsupportedOperationException();
+		this.userHandlerService.removeUser(u);
 	}
 
 }
