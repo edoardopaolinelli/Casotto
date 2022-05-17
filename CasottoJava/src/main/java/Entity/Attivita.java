@@ -13,6 +13,18 @@ public class Attivita {
 	private LocalDate date;
 	private LocalTime hour;
 
+	public Attivita(){}
+
+	public Attivita(String idAttivita, String name, String description, int maxParticipants, int actualParticipants, LocalDate date, LocalTime hour) {
+		this.idAttivita = idAttivita;
+		this.name = name;
+		this.description = description;
+		this.maxParticipants = maxParticipants;
+		this.actualParticipants = actualParticipants;
+		this.date = date;
+		this.hour = hour;
+	}
+
 	public String getIdAttivita() {
 		return this.idAttivita;
 	}

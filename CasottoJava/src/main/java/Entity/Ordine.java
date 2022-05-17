@@ -12,6 +12,11 @@ public class Ordine {
 	private LocalDate startOrder;
 	private LocalDate endOrder;
 
+	/**
+	 * CAMBIEREI LA DATA IN ORA PER L'ORDINE CHE MI SEMBRA PIÙ GIUSTO NO?
+	 * ALLA FINE UNO PRENOTA IL CIBO PER UN'ORA DI SOLITO, NON PER UN GIORNO. @pippo
+	 */
+
 	public String getIdOrdine() {
 		return this.idOrdine;
 	}
@@ -57,6 +62,7 @@ public class Ordine {
 	 * @param price
 	 */
 	public void setPrice(float price) {
+		if(price<0) throw new IllegalArgumentException("Inserire un prezzo valido");
 		this.price = price;
 	}
 
