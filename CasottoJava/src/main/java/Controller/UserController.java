@@ -27,11 +27,7 @@ public class UserController {
 	 * @param password
 	 */
 	public void login(String email, String password) {
-		try {
-			return userHandlerService.login(email,password);
-		}catch(Exception e){
 
-		}
 	}
 
 	/**
@@ -39,7 +35,6 @@ public class UserController {
 	 * @param u
 	 */
 	public void addUser(Guest u) {
-		userHandlerService.add(u);
 	}
 
 	/**
@@ -47,7 +42,7 @@ public class UserController {
 	 * @param u
 	 */
 	public void removeUser(Guest u) {
-		this.userHandlerService.removeUser(u);
+
 	}
 
 }

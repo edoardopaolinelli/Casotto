@@ -36,15 +36,15 @@ public interface AttivitaService {
 
 	/**
 	 * 
-	 * @param idCliente
+	 * @param idAttivita
 	 */
-	void addCliente(String idCliente);
+	void addttivita(String idAttivita);
 
 	/**
 	 * 
-	 * @param idCliente
+	 * @param idAttivita
 	 */
-	void removeCliente(String idCliente);
+	void removeAttivita(String idAttivita);
 
 	/**
 	 * 

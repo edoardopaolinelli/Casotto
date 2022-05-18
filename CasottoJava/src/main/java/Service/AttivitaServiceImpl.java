@@ -11,8 +11,8 @@ import java.util.List;
 
 public class AttivitaServiceImpl implements Service.AttivitaService {
 
-	private AttivitaRepository attivitaRepository;
-	private AttivitaService attivitaService;
+	private AttivitaRepository AttivitaRepository;
+	private AttivitaService AttivitaService;
 
 	/**
 	 * 
@@ -25,9 +25,8 @@ public class AttivitaServiceImpl implements Service.AttivitaService {
 	 * @param hour
 	 */
 	public Attivita createAttivita(String idAttivita, String name, String description, int maxPartecipants, int actualPartecipants, LocalDate date, LocalTime hour) {
-		Attivita attivita = new Attivita(idAttivita,name,description,maxPartecipants,actualPartecipants,date,hour);
-		attivitaRepository.save(attivita);
-		return attivita;
+		// TODO - implement AttivitaServiceImpl.createAttivita
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -35,8 +34,8 @@ public class AttivitaServiceImpl implements Service.AttivitaService {
 	 * @param idAttivita
 	 */
 	public void deleteAttivita(String idAttivita) {
-		Attivita attivita = attivitaRepository.findById(idAttivita);
-		attivitaRepository.delete(attivita);
+		// TODO - implement AttivitaServiceImpl.deleteAttivita
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -44,25 +43,26 @@ public class AttivitaServiceImpl implements Service.AttivitaService {
 	 * @param idAttivita
 	 */
 	public Attivita getAttivita(String idAttivita) {
-		return attivitaRepository.findById(idAttivita);
+		// TODO - implement AttivitaServiceImpl.getAttivita
+		throw new UnsupportedOperationException();
 	}
 
 	public List<Attivita> getAllAttivita() {
-		return attivitaRepository.findAll();
+		// TODO - implement AttivitaServiceImpl.getAllAttivita
+		throw new UnsupportedOperationException();
 	}
+
+	@Override
+	public void addttivita(String idAttivita) {
+
+	}
+
 
 	/**
 	 * 
-	 * @param idCliente
+	 * @param edAttivita
 	 */
-	public void addCliente(String idCliente) {
-	}
-
-	/**
-	 * 
-	 * @param idCliente
-	 */
-	public void removeCliente(String idCliente) {
+	public void removeAttivita(String edAttivita) {
 		// TODO - implement AttivitaServiceImpl.removeCliente
 		throw new UnsupportedOperationException();
 	}
@@ -72,7 +72,8 @@ public class AttivitaServiceImpl implements Service.AttivitaService {
 	 * @param date
 	 */
 	public List<Attivita> getAttivitaByDate(LocalDate date) {
-		return getAllAttivita().stream().filter(a -> a.getDate().isEqual(date)).toList();
+		// TODO - implement AttivitaServiceImpl.getAttivit�ByDate
+		throw new UnsupportedOperationException();
 	}
 
 }
