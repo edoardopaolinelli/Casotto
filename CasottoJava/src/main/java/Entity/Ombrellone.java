@@ -15,8 +15,7 @@ public class Ombrellone {
 	}
 
 	public String getType() {
-		// TODO - implement Ombrellone.getType
-		throw new UnsupportedOperationException();
+		return this.ombrelloneType;
 	}
 
 	/**
@@ -24,8 +23,7 @@ public class Ombrellone {
 	 * @param idOmbrellone
 	 */
 	public void setId(String idOmbrellone) {
-		// TODO - implement Ombrellone.setId
-		throw new UnsupportedOperationException();
+		this.idOmbrellone = idOmbrellone;
 	}
 
 	/**
@@ -41,8 +39,7 @@ public class Ombrellone {
 	 * @param ombrelloneType
 	 */
 	public void setType(String ombrelloneType) {
-		// TODO - implement Ombrellone.setType
-		throw new UnsupportedOperationException();
+		this.ombrelloneType = ombrelloneType;
 	}
 
 }

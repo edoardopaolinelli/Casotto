@@ -35,8 +35,7 @@ public class Promozione {
 	 * @param idPromozione
 	 */
 	public void setId(String idPromozione) {
-		// TODO - implement Promozione.setId
-		throw new UnsupportedOperationException();
+		this.idPromozione = idPromozione;
 	}
 
 	/**
