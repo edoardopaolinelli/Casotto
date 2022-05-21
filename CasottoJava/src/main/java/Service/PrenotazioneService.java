@@ -15,7 +15,7 @@ public interface PrenotazioneService {
 	 * @param endDate
 	 * @param prenotationType
 	 */
-	Prenotazione createPrenotazione(String idPrenotazione, String idUser, LocalDate startDate, LocalDate endDate, String prenotationType);
+	Prenotazione createPrenotazione(String idPrenotazione, String idUser, LocalDate startDate, LocalDate endDate, String prenotationType, Object oggettoPrenotato);
 
 	/**
 	 * 
@@ -27,7 +27,7 @@ public interface PrenotazioneService {
 	 * 
 	 * @param idPrenotazione
 	 */
-	Prenotazione getPrenotazione(int idPrenotazione);
+	Prenotazione getPrenotazione(String idPrenotazione);
 
 	List<Prenotazione> getAllPrenotazioni();
 

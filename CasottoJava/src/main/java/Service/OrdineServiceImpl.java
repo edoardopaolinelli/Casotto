@@ -1,17 +1,24 @@
 package Service;
 
 import Entity.Ordine;
+import Entity.Piatto;
 import Repository.OrdineRepository;
 import Repository.PiattoRepository;
 
 import java.time.LocalDate;
 import java.util.List;
 
-public class OrdineServiceImpl implements OrdineService {
+public class OrdineServiceImpl implements OrdineService<Piatto> {
 
 	private OrdineRepository ordineRepository;
 	private OrdineService ordineService;
 	private PiattoRepository piattoRepository;
+
+	public OrdineServiceImpl(OrdineRepository ordineRepository, PiattoRepository piattoRepository) {
+		this.ordineRepository = ordineRepository;
+		this.piattoRepository = piattoRepository;
+	}
+
 
 	/**
 	 * 
@@ -22,9 +29,8 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param startOrder
 	 * @param endOrder
 	 */
-	public Ordine createOrdine(String idOrdine, String idCliente, float price, List orderedDishes, LocalDate startOrder, LocalDate endOrder) {
-		// TODO - implement OrdineServiceImpl.createOrdine
-		throw new UnsupportedOperationException();
+	public Ordine createOrdine(String idOrdine, String idCliente, float price, List<Piatto> orderedDishes, LocalDate startOrder, LocalDate endOrder) {
+		return new Ordine(idOrdine,  price, orderedDishes, idCliente, startOrder, endOrder);
 	}
 
 	/**
@@ -32,8 +38,8 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param idOrdine
 	 */
 	public void deleteOrdine(String idOrdine) {
-		// TODO - implement OrdineServiceImpl.deleteOrdine
-		throw new UnsupportedOperationException();
+		Ordine ordine = ordineRepository.findById(idOrdine);
+		ordineRepository.delete(ordine);
 	}
 
 	/**
@@ -41,13 +47,11 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param idOrdine
 	 */
 	public Ordine getOrdine(String idOrdine) {
-		// TODO - implement OrdineServiceImpl.getOrdine
-		throw new UnsupportedOperationException();
+		return ordineRepository.findById(idOrdine);
 	}
 
 	public List<Ordine> getAllOrdini() {
-		// TODO - implement OrdineServiceImpl.getAllOrdini
-		throw new UnsupportedOperationException();
+		return ordineRepository.findAll();
 	}
 
 	/**
@@ -58,6 +62,7 @@ public class OrdineServiceImpl implements OrdineService {
 	public void confirmOrdine(String idOrdine, String idCliente) {
 		// TODO - implement OrdineServiceImpl.confirmOrdine
 		throw new UnsupportedOperationException();
+		//?
 	}
 
 	/**
@@ -68,6 +73,7 @@ public class OrdineServiceImpl implements OrdineService {
 	public void declineOrdine(String idOrdine, String idCliente) {
 		// TODO - implement OrdineServiceImpl.declineOrdine
 		throw new UnsupportedOperationException();
+		//?
 	}
 
 	/**
@@ -77,8 +83,8 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param amount
 	 */
 	public void addPiatto(long idPiatto, String idCliente, int amount) {
-		// TODO - implement OrdineServiceImpl.addPiatto
-		throw new UnsupportedOperationException();
+		Piatto piatto = piattoRepository.findById(idPiatto);
+		//Serve l'id dell'ordine altrimenti non sappiamo a che ordine aggiungerlo.
 	}
 
 	/**
@@ -88,8 +94,8 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param amount
 	 */
 	public void removePiatto(long idPiatto, String idCliente, int amount) {
-		// TODO - implement OrdineServiceImpl.removePiatto
-		throw new UnsupportedOperationException();
+		Piatto piatto = piattoRepository.findById(idPiatto);
+		//Serve l'id dell'ordine altrimenti non sappiamo da che ordine rimuoverlo.
 	}
 
 	/**
@@ -98,8 +104,8 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param amount
 	 */
 	public void incrementAmount(long idPiatto, int amount) {
-		// TODO - implement OrdineServiceImpl.incrementAmount
-		throw new UnsupportedOperationException();
+		Piatto piatto = piattoRepository.findById(idPiatto);
+		//Serve l'id dell'ordine.
 	}
 
 	/**
@@ -108,8 +114,8 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param amount
 	 */
 	public void decrementAmount(long idPiatto, int amount) {
-		// TODO - implement OrdineServiceImpl.decrementAmount
-		throw new UnsupportedOperationException();
+		Piatto piatto = piattoRepository.findById(idPiatto);
+		//Serve l'id dell'ordine.
 	}
 
 	/**
@@ -117,8 +123,7 @@ public class OrdineServiceImpl implements OrdineService {
 	 * @param date
 	 */
 	public List<Ordine> getOrdiniByDate(LocalDate date) {
-		// TODO - implement OrdineServiceImpl.getOrdiniByDate
-		throw new UnsupportedOperationException();
+		return ordineRepository.findAll().stream().filter(o -> o.getStartOrder().isEqual(date)).toList();
 	}
 
 }

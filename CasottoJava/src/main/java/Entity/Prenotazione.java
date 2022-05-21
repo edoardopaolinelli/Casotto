@@ -11,6 +11,17 @@ public class Prenotazione {
 	private String prenotationType;
 	private Object oggettoPrenotato;
 
+	public Prenotazione(){}
+
+	public Prenotazione(String idPrenotazione, String idCliente, LocalDate startDate, LocalDate endDate, String prenotationType, Object oggettoPrenotato) {
+		this.idPrenotazione = idPrenotazione;
+		this.idCliente = idCliente;
+		this.startDate = startDate;
+		this.endDate = endDate;
+		this.prenotationType = prenotationType;
+		this.oggettoPrenotato = oggettoPrenotato;
+	}
+
 	public String getIdPrenotazione() {
 		return this.idPrenotazione;
 	}

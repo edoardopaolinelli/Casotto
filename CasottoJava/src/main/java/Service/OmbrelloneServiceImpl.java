@@ -10,6 +10,11 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	private OmbrelloneRepository ombrelloneRepository;
 	private OmbrelloneService ombrelloneService;
 
+	public OmbrelloneServiceImpl(OmbrelloneRepository ombrelloneRepository) {
+		this.ombrelloneRepository = ombrelloneRepository;
+	}
+
+
 	/**
 	 * 
 	 * @param idOmbrellone
@@ -17,8 +22,9 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * @param type
 	 */
 	public Ombrellone createOmbrellone(String idOmbrellone, float price, String type) {
-		// TODO - implement OmbrelloneServiceImpl.createOmbrellone
-		throw new UnsupportedOperationException();
+		Ombrellone ombrellone = new Ombrellone(idOmbrellone, price, type);
+		ombrelloneRepository.save(ombrellone);
+		return ombrellone;
 	}
 
 	/**
@@ -26,8 +32,8 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * @param idOmbrellone
 	 */
 	public void deleteOmbrellone(String idOmbrellone) {
-		// TODO - implement OmbrelloneServiceImpl.deleteOmbrellone
-		throw new UnsupportedOperationException();
+		Ombrellone ombrellone = ombrelloneRepository.findById(idOmbrellone);
+		ombrelloneRepository.delete(ombrellone);
 	}
 
 	/**
@@ -35,13 +41,11 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * @param idOmbrellone
 	 */
 	public Ombrellone getOmbrellone(String idOmbrellone) {
-		// TODO - implement OmbrelloneServiceImpl.getOmbrellone
-		throw new UnsupportedOperationException();
+		return ombrelloneRepository.findById(idOmbrellone);
 	}
 
 	public List<Ombrellone> getAllOmbrelloni() {
-		// TODO - implement OmbrelloneServiceImpl.getAllOmbrelloni
-		throw new UnsupportedOperationException();
+		return ombrelloneRepository.findAll();
 	}
 
 	/**
@@ -49,8 +53,7 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * @param ombrelloneType
 	 */
 	public List<Ombrellone> getOmbrelloniByType(String ombrelloneType) {
-		// TODO - implement OmbrelloneServiceImpl.getOmbrelloniByType
-		throw new UnsupportedOperationException();
+		return ombrelloneRepository.findAll().stream().filter(o -> o.getType().equals(ombrelloneType)).toList();
 	}
 
 }

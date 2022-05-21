@@ -18,7 +18,7 @@ public interface PiattoRepository {
 	 * 
 	 * @param id
 	 */
-	Piatto findById(String id);
+	Piatto findById(long id);
 
 	/**
 	 * 

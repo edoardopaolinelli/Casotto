@@ -10,6 +10,10 @@ public class PiattoServiceImpl implements PiattoService {
 	private PiattoRepository piattoRepository;
 	private PiattoService piattoService;
 
+	public PiattoServiceImpl(PiattoRepository piattoRepository) {
+		this.piattoRepository = piattoRepository;
+	}
+
 	/**
 	 * 
 	 * @param idPiatto
@@ -19,8 +23,9 @@ public class PiattoServiceImpl implements PiattoService {
 	 * @param type
 	 */
 	public Piatto createPiatto(long idPiatto, String namePiatto, String description, float price, String type) {
-		// TODO - implement PiattoServiceImpl.createPiatto
-		throw new UnsupportedOperationException();
+		Piatto piatto = new Piatto(idPiatto, namePiatto, description, price, type);
+		piattoRepository.save(piatto);
+		return piatto;
 	}
 
 	/**
@@ -28,8 +33,8 @@ public class PiattoServiceImpl implements PiattoService {
 	 * @param idPiatto
 	 */
 	public void deletePiatto(long idPiatto) {
-		// TODO - implement PiattoServiceImpl.deletePiatto
-		throw new UnsupportedOperationException();
+		Piatto piatto = piattoRepository.findById(idPiatto);
+		piattoRepository.delete(piatto);
 	}
 
 	/**
@@ -37,13 +42,11 @@ public class PiattoServiceImpl implements PiattoService {
 	 * @param idPiatto
 	 */
 	public Piatto getPiatto(long idPiatto) {
-		// TODO - implement PiattoServiceImpl.getPiatto
-		throw new UnsupportedOperationException();
+		return piattoRepository.findById(idPiatto);
 	}
 
 	public List<Piatto> getAllPiatti() {
-		// TODO - implement PiattoServiceImpl.getAllPiatti
-		throw new UnsupportedOperationException();
+		return piattoRepository.findAll();
 	}
 
 	/**
@@ -51,8 +54,7 @@ public class PiattoServiceImpl implements PiattoService {
 	 * @param type
 	 */
 	public List<Piatto> getPiattiByType(String type) {
-		// TODO - implement PiattoServiceImpl.getPiattiByType
-		throw new UnsupportedOperationException();
+		return piattoRepository.findAll().stream().filter(p -> p.getType().equals(type)).toList();
 	}
 
 }

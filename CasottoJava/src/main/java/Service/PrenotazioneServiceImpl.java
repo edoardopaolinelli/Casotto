@@ -14,6 +14,10 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	private OmbrelloneService ombrelloneService;
 	private LettinoService lettinoService;
 
+	public PrenotazioneServiceImpl(PrenotazioneRepository prenotazioneRepository) {
+		this.prenotazioneRepository = prenotazioneRepository;
+	}
+
 	/**
 	 * 
 	 * @param idPrenotazione
@@ -22,9 +26,11 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * @param endDate
 	 * @param prenotationType
 	 */
-	public Prenotazione createPrenotazione(String idPrenotazione, String idUser, LocalDate startDate, LocalDate endDate, String prenotationType) {
-		// TODO - implement PrenotazioneServiceImpl.createPrenotazione
-		throw new UnsupportedOperationException();
+	//MANCAVA oggettoPrenotato SU .VPP(DA AGGIUNGERE IN PRENOTAZIONE ENTITY)
+	public Prenotazione createPrenotazione(String idPrenotazione, String idUser, LocalDate startDate, LocalDate endDate, String prenotationType, Object oggettoPrenotato) {
+		Prenotazione prenotazione = new Prenotazione(idPrenotazione, idUser, startDate, endDate, prenotationType, oggettoPrenotato);
+		prenotazioneRepository.save(prenotazione);
+		return prenotazione;
 	}
 
 	/**
@@ -32,22 +38,20 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * @param idPrenotazione
 	 */
 	public void deletePrenotazione(String idPrenotazione) {
-		// TODO - implement PrenotazioneServiceImpl.deletePrenotazione
-		throw new UnsupportedOperationException();
+		Prenotazione prenotazione = prenotazioneRepository.findById(idPrenotazione);
+		prenotazioneRepository.delete(prenotazione);
 	}
 
 	/**
 	 * 
 	 * @param idPrenotazione
 	 */
-	public Prenotazione getPrenotazione(int idPrenotazione) {
-		// TODO - implement PrenotazioneServiceImpl.getPrenotazione
-		throw new UnsupportedOperationException();
+	public Prenotazione getPrenotazione(String idPrenotazione) {
+		return prenotazioneRepository.findById(idPrenotazione);
 	}
 
 	public List<Prenotazione> getAllPrenotazioni() {
-		// TODO - implement PrenotazioneServiceImpl.getAllPrenotazioni
-		throw new UnsupportedOperationException();
+		return prenotazioneRepository.findAll();
 	}
 
 	/**
@@ -55,8 +59,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * @param prenotazioneType
 	 */
 	public List<Prenotazione> getPrenotazioniByType(String prenotazioneType) {
-		// TODO - implement PrenotazioneServiceImpl.getPrenotazioniByType
-		throw new UnsupportedOperationException();
+		return prenotazioneRepository.findAll().stream().filter(p -> p.getPrenotationType().equals(prenotazioneType)).toList();
 	}
 
 	/**
@@ -64,8 +67,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * @param idCliente
 	 */
 	public List<Prenotazione> getPrenotazioniByCliente(String idCliente) {
-		// TODO - implement PrenotazioneServiceImpl.getPrenotazioniByCliente
-		throw new UnsupportedOperationException();
+		return prenotazioneRepository.findAll().stream().filter(p -> p.getIdCliente().equals(idCliente)).toList();
 	}
 
 	/**
@@ -73,8 +75,7 @@ public class PrenotazioneServiceImpl implements PrenotazioneService {
 	 * @param startDate
 	 */
 	public List<Prenotazione> getPrenotazionyByStartDate(LocalDate startDate) {
-		// TODO - implement PrenotazioneServiceImpl.getPrenotazionyByStartDate
-		throw new UnsupportedOperationException();
+		return prenotazioneRepository.findAll().stream().filter(p -> p.getStartDate().isEqual(startDate)).toList();
 	}
 
 }

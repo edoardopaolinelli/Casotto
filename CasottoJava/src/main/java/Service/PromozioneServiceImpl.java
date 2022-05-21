@@ -11,6 +11,10 @@ public class PromozioneServiceImpl implements PromozioneService {
 	private PromozioneRepository promozioneRepository;
 	private PromozioneService promozioneService;
 
+	public PromozioneServiceImpl(PromozioneRepository promozioneRepository) {
+		this.promozioneRepository = promozioneRepository;
+	}
+
 	/**
 	 * 
 	 * @param idPromozione
@@ -20,8 +24,9 @@ public class PromozioneServiceImpl implements PromozioneService {
 	 * @param endDate
 	 */
 	public Promozione createPromozione(String idPromozione, String name, String description, LocalDate startDate, LocalDate endDate) {
-		// TODO - implement PromozioneServiceImpl.createPromozione
-		throw new UnsupportedOperationException();
+		Promozione promozione = new Promozione(idPromozione, name, description, startDate, endDate);
+		promozioneRepository.save(promozione);
+		return promozione;
 	}
 
 	/**
@@ -29,8 +34,8 @@ public class PromozioneServiceImpl implements PromozioneService {
 	 * @param idPromozione
 	 */
 	public void deletePromozione(String idPromozione) {
-		// TODO - implement PromozioneServiceImpl.deletePromozione
-		throw new UnsupportedOperationException();
+		Promozione promozione = promozioneRepository.findById(idPromozione);
+		promozioneRepository.delete(promozione);
 	}
 
 	/**
@@ -38,13 +43,11 @@ public class PromozioneServiceImpl implements PromozioneService {
 	 * @param idPromozione
 	 */
 	public Promozione getPromozione(String idPromozione) {
-		// TODO - implement PromozioneServiceImpl.getPromozione
-		throw new UnsupportedOperationException();
+		return promozioneRepository.findById(idPromozione);
 	}
 
 	public List<Promozione> getAllPromozioni() {
-		// TODO - implement PromozioneServiceImpl.getAllPromozioni
-		throw new UnsupportedOperationException();
+		return promozioneRepository.findAll();
 	}
 
 	/**
@@ -52,8 +55,7 @@ public class PromozioneServiceImpl implements PromozioneService {
 	 * @param startDate
 	 */
 	public List<Promozione> getPromozioniByStartDate(LocalDate startDate) {
-		// TODO - implement PromozioneServiceImpl.getPromozioniByStartDate
-		throw new UnsupportedOperationException();
+		return promozioneRepository.findAll().stream().filter(p -> p.getStartDate().isEqual(startDate)).toList();
 	}
 
 }

@@ -19,6 +19,15 @@ public class Lettino {
 		return this.lettinoType;
 	}
 
+	public Lettino(){}
+
+
+	public Lettino(String idLettino, float price, String lettinoType){
+		this.idLettino = idLettino;
+		this.price = price;
+		this.lettinoType = lettinoType;
+	}
+
 	/**
 	 * 
 	 * @param idLettino

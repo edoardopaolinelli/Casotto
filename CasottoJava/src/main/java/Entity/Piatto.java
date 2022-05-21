@@ -8,6 +8,16 @@ public class Piatto {
 	private float price;
 	private String piattoType;
 
+	public Piatto(){}
+
+	public Piatto(long id, String name, String description, float price, String piattoType) {
+		this.id = id;
+		this.name = name;
+		this.description = description;
+		this.price = price;
+		this.piattoType = piattoType;
+	}
+
 	public long getId() {
 		return this.id;
 	}

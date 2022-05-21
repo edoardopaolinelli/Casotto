@@ -5,7 +5,7 @@ import Entity.Ordine;
 import java.time.LocalDate;
 import java.util.List;
 
-public interface OrdineService {
+public interface OrdineService<P> {
 
 	/**
 	 * 
@@ -16,7 +16,7 @@ public interface OrdineService {
 	 * @param startOrder
 	 * @param endOrder
 	 */
-	Ordine createOrdine(String idOrdine, String idCliente, float price, List orderedDishes, LocalDate startOrder, LocalDate endOrder);
+	Ordine createOrdine(String idOrdine, String idCliente, float price, List<P> orderedDishes, LocalDate startOrder, LocalDate endOrder);
 
 	/**
 	 * 

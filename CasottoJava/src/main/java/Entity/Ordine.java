@@ -12,6 +12,17 @@ public class Ordine {
 	private LocalDate startOrder;
 	private LocalDate endOrder;
 
+	public Ordine(){}
+
+	public Ordine(String idOrdine, float price, List<Piatto> orderedDishes, String idCliente, LocalDate startOrder, LocalDate endOrder) {
+		this.idOrdine = idOrdine;
+		this.price = price;
+		this.orderedDishes = orderedDishes;
+		this.idCliente = idCliente;
+		this.startOrder = startOrder;
+		this.endOrder = endOrder;
+	}
+
 	/**
 	 * CAMBIEREI LA DATA IN ORA PER L'ORDINE CHE MI SEMBRA PIÙ GIUSTO NO?
 	 * ALLA FINE UNO PRENOTA IL CIBO PER UN'ORA DI SOLITO, NON PER UN GIORNO. @pippo

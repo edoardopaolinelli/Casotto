@@ -6,6 +6,14 @@ public class Ombrellone {
 	private float price;
 	private String ombrelloneType;
 
+	public Ombrellone(){}
+
+	public Ombrellone(String idOmbrellone, float price, String ombrelloneType) {
+		this.idOmbrellone = idOmbrellone;
+		this.price = price;
+		this.ombrelloneType = ombrelloneType;
+	}
+
 	public String getIdOmbrellone() {
 		return this.idOmbrellone;
 	}

@@ -10,6 +10,16 @@ public class Promozione {
 	private LocalDate startDate;
 	private LocalDate endDate;
 
+	public Promozione(){}
+
+	public Promozione(String idPromozione, String name, String description, LocalDate startDate, LocalDate endDate) {
+		this.idPromozione = idPromozione;
+		this.name = name;
+		this.description = description;
+		this.startDate = startDate;
+		this.endDate = endDate;
+	}
+
 	public String getIdPromozione() {
 		return this.idPromozione;
 	}

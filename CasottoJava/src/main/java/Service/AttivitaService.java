@@ -38,7 +38,7 @@ public interface AttivitaService {
 	 * 
 	 * @param idAttivita
 	 */
-	void addttivita(String idAttivita);
+	void addAttivita(String idAttivita);
 
 	/**
 	 * 

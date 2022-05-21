@@ -10,6 +10,11 @@ public class LettinoServiceImpl implements LettinoService {
 	private LettinoRepository lettinoRepository;
 	private LettinoService lettinoService;
 
+	public LettinoServiceImpl(LettinoRepository lettinoRepository) {
+		this.lettinoRepository = lettinoRepository;
+	}
+
+
 	/**
 	 * 
 	 * @param idLettino
@@ -17,8 +22,9 @@ public class LettinoServiceImpl implements LettinoService {
 	 * @param type
 	 */
 	public Lettino createLettino(String idLettino, float price, String type) {
-		// TODO - implement LettinoServiceImpl.createLettino
-		throw new UnsupportedOperationException();
+		Lettino lettino = new Lettino(idLettino, price, type);
+		lettinoRepository.save(lettino);
+		return lettino;
 	}
 
 	/**
@@ -26,7 +32,8 @@ public class LettinoServiceImpl implements LettinoService {
 	 * @param idLettino
 	 */
 	public void deleteLettino(String idLettino) {
-		// TODO - implement LettinoServiceImpl.deleteLettino
+		Lettino lettino = lettinoRepository.findById(idLettino);
+		lettinoRepository.delete(lettino);
 	}
 
 	/**
@@ -34,13 +41,11 @@ public class LettinoServiceImpl implements LettinoService {
 	 * @param idLettino
 	 */
 	public Lettino getLettino(String idLettino) {
-		// TODO - implement LettinoServiceImpl.getLettino
-		throw new UnsupportedOperationException();
+		return lettinoRepository.findById(idLettino);
 	}
 
 	public List<Lettino> getAllLettini() {
-		// TODO - implement LettinoServiceImpl.getAllLettini
-		throw new UnsupportedOperationException();
+		return lettinoRepository.findAll();
 	}
 
 	/**
@@ -48,8 +53,7 @@ public class LettinoServiceImpl implements LettinoService {
 	 * @param lettinoType
 	 */
 	public List<Lettino> getLettiniByType(String lettinoType) {
-		// TODO - implement LettinoServiceImpl.getLettiniByType
-		throw new UnsupportedOperationException();
+		return lettinoRepository.findAll().stream().filter(l -> l.getType().equals(lettinoType)).toList();
 	}
 
 }
