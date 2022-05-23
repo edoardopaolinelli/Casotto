@@ -2,7 +2,10 @@ import Entity.Ordine;
 import Entity.Piatto;
 import org.junit.jupiter.api.Test;
 
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.temporal.TemporalAdjusters;
+import java.time.temporal.TemporalAmount;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -44,15 +47,21 @@ public class OrdineTest {
     public void testIdCliente(){
         Ordine ordine = new Ordine();
         ordine.setIdCliente("C_0000");
-        assertEquals(ordine.getIdOrdine(), "C_0000");
+        assertEquals(ordine.getIdCliente(), "C_0000");
     }
     @Test
     public void testStartDate(){
-
+        Ordine ordine = new Ordine();
+        ordine.setStartOrder(LocalDate.now());
+        assertEquals(ordine.getStartOrder(), LocalDate.now());
+        assertThrows(IllegalArgumentException.class, () -> ordine.setStartOrder(LocalDate.ofYearDay(1999, 25)), "IllegalArgumentException expected");
     }
     @Test
     public void testEndDate(){
-
+        Ordine ordine = new Ordine();
+        ordine.setEndOrder(LocalDate.now().plus(Duration.ofDays(1L)));
+        assertEquals(ordine.getEndOrder(), LocalDate.now().plus(Duration.ofDays(1L)));
+        assertThrows(IllegalArgumentException.class, () -> ordine.setEndOrder(LocalDate.now().minus(Duration.ofDays(1L))), "IllegalArgumentException expected");
     }
 
 }

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="OrdineTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2022-05-23T10:34:42" hostname="DESKTOP-JR0URSD" time="0.017">
+  <properties/>
+  <testcase name="testStartDate()" classname="OrdineTest" time="0.017"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

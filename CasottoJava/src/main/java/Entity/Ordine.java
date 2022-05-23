@@ -88,6 +88,7 @@ public class Ordine {
 	/**
 	 * 
 	 * @param startOrder
+	 * @throws IllegalArgumentException se la start date è previa al giorno stesso.
 	 */
 	public void setStartOrder(LocalDate startOrder) {
 		this.startOrder = startOrder;
@@ -96,6 +97,7 @@ public class Ordine {
 	/**
 	 * 
 	 * @param endOrder
+	 * @throws IllegalArgumentException se la end date è previa al giorno stesso o se è previa alla start date.
 	 */
 	public void setEndOrder(LocalDate endOrder) {
 		this.endOrder = endOrder;
