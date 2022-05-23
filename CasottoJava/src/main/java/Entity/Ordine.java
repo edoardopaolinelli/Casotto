@@ -91,6 +91,7 @@ public class Ordine {
 	 * @throws IllegalArgumentException se la start date è previa al giorno stesso.
 	 */
 	public void setStartOrder(LocalDate startOrder) {
+		if(startOrder.isBefore(LocalDate.now())) throw new IllegalArgumentException();
 		this.startOrder = startOrder;
 	}
 
@@ -100,6 +101,8 @@ public class Ordine {
 	 * @throws IllegalArgumentException se la end date è previa al giorno stesso o se è previa alla start date.
 	 */
 	public void setEndOrder(LocalDate endOrder) {
+		if(endOrder.isBefore(LocalDate.now())) throw new IllegalArgumentException();
+		if(startOrder!=null && endOrder.isBefore(startOrder)) throw new IllegalArgumentException();
 		this.endOrder = endOrder;
 	}
 

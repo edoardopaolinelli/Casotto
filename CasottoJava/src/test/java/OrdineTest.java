@@ -59,9 +59,9 @@ public class OrdineTest {
     @Test
     public void testEndDate(){
         Ordine ordine = new Ordine();
-        ordine.setEndOrder(LocalDate.now().plus(Duration.ofDays(1L)));
-        assertEquals(ordine.getEndOrder(), LocalDate.now().plus(Duration.ofDays(1L)));
-        assertThrows(IllegalArgumentException.class, () -> ordine.setEndOrder(LocalDate.now().minus(Duration.ofDays(1L))), "IllegalArgumentException expected");
+        ordine.setEndOrder(LocalDate.now().plusDays(1));
+        assertEquals(ordine.getEndOrder(), LocalDate.now().plusDays(1));
+        assertThrows(IllegalArgumentException.class, () -> ordine.setEndOrder(LocalDate.now().minusDays(1)), "IllegalArgumentException expected");
     }
 
 }
