@@ -1,7 +1,9 @@
 package Controller;
 
 import Entity.Lettino;
+import Repository.LettinoRepository;
 import Service.LettinoService;
+import Service.LettinoServiceImpl;
 
 import java.util.List;
 
@@ -15,12 +17,12 @@ public class LettinoController {
 	 */
 	public Lettino getLettino(String idLettino) {
 
-		return null;
+		return lettinoService.getLettino(idLettino);
 	}
 
 	public List<Lettino> getAllLettini() {
-		// TODO - implement LettinoController.getAllLettini
-		throw new UnsupportedOperationException();
+
+		return null;
 	}
 
 	/**
@@ -28,8 +30,8 @@ public class LettinoController {
 	 * @param l
 	 */
 	public void addLettino(Lettino l) {
-		// TODO - implement LettinoController.addLettino
-		throw new UnsupportedOperationException();
+		String lettino = l.getIdLettino();
+		lettinoService.createLettino(lettino, l.getPrice(), l.getType());
 	}
 
 	/**
@@ -37,8 +39,8 @@ public class LettinoController {
 	 * @param l
 	 */
 	public void removeLettino(Lettino l) {
-		// TODO - implement LettinoController.removeLettino
-		throw new UnsupportedOperationException();
+		String lettino = l.getIdLettino();
+		lettinoService.deleteLettino(lettino);
 	}
 
 }

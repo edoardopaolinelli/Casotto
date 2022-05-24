@@ -13,14 +13,12 @@ public class AttivitaController {
 	 *
 	 * @param idAttivita
 	 */
-	public Attivita getAttivita(Attivita idAttivita) {
-		// TODO - implement AttivitaController.getAttivita
-		throw new UnsupportedOperationException();
+	public Attivita getAttivita(String idAttivita) {
+		return attivitaService.getAttivita(idAttivita);
 	}
 
 	public List<Attivita> getAllAttivita() {
-		// TODO - implement AttivitaController.getAllAttivita
-		throw new UnsupportedOperationException();
+		return attivitaService.getAllAttivita();
 	}
 
 	/**
