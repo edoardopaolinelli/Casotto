@@ -14,13 +14,11 @@ public class OrdineController {
 	 * @param idOrdine
 	 */
 	public Ordine getOrdine(String idOrdine) {
-		// TODO - implement OrdineController.getOrdine
-		throw new UnsupportedOperationException();
+		return ordineService.getOrdine(idOrdine);
 	}
 
 	public List<Ordine> getAllOrdini() {
-		// TODO - implement OrdineController.getAllOrdini
-		throw new UnsupportedOperationException();
+		return ordineService.getAllOrdini();
 	}
 
 	/**
