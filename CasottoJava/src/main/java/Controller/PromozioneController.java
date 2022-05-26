@@ -14,13 +14,11 @@ public class PromozioneController {
 	 * @param idPromozine
 	 */
 	public Promozione getPromozione(String idPromozine) {
-		// TODO - implement PromozioneController.getPromozione
-		throw new UnsupportedOperationException();
+		return promozioneService.getPromozione(idPromozine);
 	}
 
 	public List<Promozione> getAllPromozioni() {
-		// TODO - implement PromozioneController.getAllPromozioni
-		throw new UnsupportedOperationException();
+		return promozioneService.getAllPromozioni();
 	}
 
 	/**
@@ -28,8 +26,8 @@ public class PromozioneController {
 	 * @param p
 	 */
 	public void addPromozione(Promozione p) {
-		// TODO - implement PromozioneController.addPromozione
-		throw new UnsupportedOperationException();
+		String idPrenotazione = p.getIdPromozione();
+		promozioneService.createPromozione(idPrenotazione, p.getName(), p.getDescription(), p.getStartDate(), p.getEndDate());
 	}
 
 	/**
@@ -37,8 +35,7 @@ public class PromozioneController {
 	 * @param p
 	 */
 	public void removePromozione(Promozione p) {
-		// TODO - implement PromozioneController.removePromozione
-		throw new UnsupportedOperationException();
+		promozioneService.deletePromozione(p.getIdPromozione());
 	}
 
 }

@@ -26,8 +26,8 @@ public class AttivitaController {
 	 * @param a
 	 */
 	public void addAttivita(Attivita a) {
-		// TODO - implement AttivitaController.addAttivita
-		throw new UnsupportedOperationException();
+		String idAttivita = a.getIdAttivita();
+		attivitaService.createAttivita(idAttivita, a.getName(), a.getDescription(), a.getMaxParticipants(), a.getActualParticipants(), a.getDate(), a.getHour());
 	}
 
 	/**
@@ -35,8 +35,7 @@ public class AttivitaController {
 	 * @param a
 	 */
 	public void removeAttivita(Attivita a) {
-		// TODO - implement AttivitaController.removeAttivita
-		throw new UnsupportedOperationException();
+		attivitaService.deleteAttivita(a.getIdAttivita());
 	}
 
 }
