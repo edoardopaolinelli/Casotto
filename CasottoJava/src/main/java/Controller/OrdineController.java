@@ -26,8 +26,9 @@ public class OrdineController {
 	 * @param o
 	 */
 	public void addOrdine(Ordine o) {
-		// TODO - implement OrdineController.addOrdine
-		throw new UnsupportedOperationException();
+		String idOrdine = o.getIdOrdine();
+		String idCliente = o.getIdCliente();
+		ordineService.createOrdine(idOrdine, idCliente, o.getPrice(), o.getOrderedDishes(), o.getStartOrder(), o.getEndOrder());
 	}
 
 	/**
@@ -35,8 +36,7 @@ public class OrdineController {
 	 * @param o
 	 */
 	public void removeOrdine(Ordine o) {
-		// TODO - implement OrdineController.removeOrdine
-		throw new UnsupportedOperationException();
+		ordineService.deleteOrdine(o.getIdOrdine());
 	}
 
 }

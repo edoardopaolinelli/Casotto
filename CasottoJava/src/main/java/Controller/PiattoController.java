@@ -11,16 +11,14 @@ public class PiattoController {
 
 	/**
 	 * 
-	 * @param namePiatto
+	 * @param idPiatto
 	 */
-	public Piatto getPiatto(String namePiatto) {
-		// TODO - implement PiattoController.getPiatto
-		throw new UnsupportedOperationException();
+public Piatto getPiatto(long idPiatto) {
+		return piattoService.getPiatto( idPiatto);
 	}
 
 	public List<Piatto> getAllPiatti() {
-		// TODO - implement PiattoController.getAllPiatti
-		throw new UnsupportedOperationException();
+		return piattoService.getAllPiatti();
 	}
 
 	/**
@@ -28,8 +26,9 @@ public class PiattoController {
 	 * @param p
 	 */
 	public void addPiatto(Piatto p) {
-		// TODO - implement PiattoController.addPiatto
-		throw new UnsupportedOperationException();
+		String piatto = p.getName();
+		long idPiatto = p.getId();
+		piattoService.createPiatto(idPiatto, piatto, p.getDescription(), p.getPrice(), p.getType());
 	}
 
 	/**
@@ -37,8 +36,7 @@ public class PiattoController {
 	 * @param p
 	 */
 	public void removePiatto(Piatto p) {
-		// TODO - implement PiattoController.removePiatto
-		throw new UnsupportedOperationException();
+		piattoService.deletePiatto(p.getId());
 	}
 
 }

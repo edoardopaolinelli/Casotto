@@ -21,8 +21,7 @@ public class LettinoController {
 	}
 
 	public List<Lettino> getAllLettini() {
-
-		return null;
+	return lettinoService.getAllLettini();
 	}
 
 	/**
