@@ -9,6 +9,10 @@ public class AttivitaController {
 
 	private AttivitaService attivitaService;
 
+	public AttivitaController(AttivitaService attivitaService){
+		this.attivitaService = attivitaService;
+	}
+
 	/**
 	 *
 	 * @param idAttivita

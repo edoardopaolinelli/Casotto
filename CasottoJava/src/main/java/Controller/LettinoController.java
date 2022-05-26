@@ -11,6 +11,10 @@ public class LettinoController {
 
 	private LettinoService lettinoService;
 
+	public LettinoController(LettinoService lettinoService){
+		this.lettinoService = lettinoService;
+	}
+
 	/**
 	 * 
 	 * @param idLettino
