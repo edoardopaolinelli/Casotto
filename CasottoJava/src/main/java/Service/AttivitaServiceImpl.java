@@ -2,6 +2,7 @@ package Service;
 
 
 import Entity.Attivita;
+import Entity.Ombrellone;
 import Repository.AttivitaRepository;
 
 
@@ -55,9 +56,13 @@ public class AttivitaServiceImpl implements Service.AttivitaService {
 
 	@Override
 	public void addAttivita(String idAttivita) {
-		// TODO - implement AttivitaServiceImpl.addCliente
-		throw new UnsupportedOperationException();
-	}
+		if( attivitaRepository.findById(idAttivita) == null) {
+			throw new  NullPointerException("Attivita non trovata");
+		} else if(attivitaService.getAllAttivita().contains(attivitaRepository.findById(idAttivita))) {
+			throw new IllegalArgumentException("Attivita già presente");
+		} else {
+			attivitaRepository.save(attivitaRepository.findById(idAttivita));
+		}}
 
 
 	/**
@@ -65,8 +70,8 @@ public class AttivitaServiceImpl implements Service.AttivitaService {
 	 * @param idAttivita
 	 */
 	public void removeAttivita(String idAttivita) {
-		// TODO - implement AttivitaServiceImpl.removeCliente
-		throw new UnsupportedOperationException();
+		Attivita attivita = attivitaRepository.findById(idAttivita);
+		attivitaRepository.delete(attivita);
 	}
 
 	/**
