@@ -14,13 +14,14 @@ public class PrenotazioneController {
 	 * @param idPrenotazione
 	 */
 	public Prenotazione getPrenotazione(String idPrenotazione) {
-		// TODO - implement PrenotazioneController.getPrenotazione
-		throw new UnsupportedOperationException();
+		if (prenotazioneService == null) {
+			throw new NullPointerException("Prenotazione is null");
+		}
+		return prenotazioneService.getPrenotazione(idPrenotazione);
 	}
 
 	public List<Prenotazione> getAllPrenotazioni() {
-		// TODO - implement PrenotazioneController.getAllPrenotazioni
-		throw new UnsupportedOperationException();
+		return prenotazioneService.getAllPrenotazioni();
 	}
 
 	/**
@@ -28,8 +29,13 @@ public class PrenotazioneController {
 	 * @param p
 	 */
 	public void addPrenotazione(Prenotazione p) {
-		// TODO - implement PrenotazioneController.addPrenotazione
-		throw new UnsupportedOperationException();
+		if(p == null) {
+			throw new NullPointerException("Prenotazione is null");
+		}
+		else if( prenotazioneService.getAllPrenotazioni().contains(p)) {
+			throw new IllegalArgumentException("Prenotazione already exists");
+		}
+		prenotazioneService.createPrenotazione( p.getIdPrenotazione(), p.getIdCliente(), p.getStartDate(), p.getEndDate(), p.getPrenotationType(), p.getOggettoPrenotato());
 	}
 
 	/**
@@ -37,8 +43,12 @@ public class PrenotazioneController {
 	 * @param p
 	 */
 	public void removePrenotazione(Prenotazione p) {
-		// TODO - implement PrenotazioneController.removePrenotazione
-		throw new UnsupportedOperationException();
+		if( prenotazioneService.getAllPrenotazioni().contains(p)) {
+			prenotazioneService.deletePrenotazione(p.getIdPrenotazione());
+		}
+		else {
+			throw new IllegalArgumentException("Prenotazione does not exist");
+		}
 	}
 
 }
