@@ -7,6 +7,7 @@ import java.util.List;
 public class UserHandlerServiceImpl implements UserHandlerService {
 
 	private UserHandlerService userHandlerService;
+	private UserService userService;
 
 	/**
 	 * 
@@ -42,8 +43,7 @@ public class UserHandlerServiceImpl implements UserHandlerService {
 	}
 
 	public List<Guest> getAllUsers() {
-		// TODO - implement UserHandlerServiceImpl.getAllUsers
-		throw new UnsupportedOperationException();
+		return userService.getAllClienti();
 	}
 
 	/**
