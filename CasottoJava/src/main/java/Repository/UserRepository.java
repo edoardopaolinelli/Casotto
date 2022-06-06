@@ -26,4 +26,5 @@ public interface UserRepository {
 	 */
 	void delete(Guest g);
 
+    List<Long> login(int type, String email, String password);
 }

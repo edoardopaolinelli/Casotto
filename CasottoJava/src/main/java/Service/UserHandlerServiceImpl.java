@@ -16,8 +16,8 @@ public class UserHandlerServiceImpl implements UserHandlerService {
 	 * @param password
 	 */
 	public List<Long> login(int type, String email, String password) {
-		// TODO - implement UserHandlerServiceImpl.login
-		throw new UnsupportedOperationException();
+		return userService.login(type, email, password);
+
 	}
 
 	/**
@@ -25,8 +25,7 @@ public class UserHandlerServiceImpl implements UserHandlerService {
 	 * @param token
 	 */
 	public String logout(long token) {
-		// TODO - implement UserHandlerServiceImpl.logout
-		throw new UnsupportedOperationException();
+		return userService.logout(token);
 	}
 
 	/**
@@ -38,8 +37,7 @@ public class UserHandlerServiceImpl implements UserHandlerService {
 	 * @param password
 	 */
 	public void signin(int type, String name, String surname, String email, String password) {
-		// TODO - implement UserHandlerServiceImpl.signin
-		throw new UnsupportedOperationException();
+		userService.signin(type, name, surname, email, password);
 	}
 
 	public List<Guest> getAllUsers() {
