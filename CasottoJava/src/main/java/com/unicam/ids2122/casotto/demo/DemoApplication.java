@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import java.util.Iterator;
 import java.util.Scanner;
 
 @SpringBootApplication
@@ -29,76 +30,80 @@ public class DemoApplication {
 	public CommandLineRunner demo(UserRepository repository) {
 		return (args) -> {
 
-			log.info("Customers found with findAll():");
-			log.info("-------------------------------");
-			for (Guest customer : repository.findAll()) {
-				log.info(customer.toString());
-			}
-			log.info("");
-
-			System.out.println("Benvenuti al Casotto");
-
-			System.out.println("Premere 1 per Accedere oppure 0 per Registrarsi");
+			System.out.println("\t\t\tCASOTTO\t\t\t");
+			System.out.println("---------------------------------");
+			System.out.println("Premere 0 per Registrarsi oppure 1 per Accedere");
 
 			Scanner scanner = new Scanner(System.in);
-			int inputInt= scanner.nextInt();
-			if(inputInt == 0){
-				scanner.skip("\n");
-				System.out.print("Nome: ");
-				String name = scanner.nextLine();
-				System.out.print("Cognome: ");
-				String surname = scanner.nextLine();
-				System.out.print("Email: ");
-				String email = scanner.nextLine();
-				System.out.print("Password: ");
-				String password = scanner.nextLine();
+			int inputInt = scanner.nextInt();
 
 
-				if(repository.findAll().stream().anyMatch(guest -> email.equals(guest.getEmail()))){
-					throw new Exception("Utente già Registrato");
+			// REGISTRAZIONE
+			if (inputInt == 0) {
+				String name = "", surname = "", email = "", password = "";
+				boolean accessoEffettuato = false;
+				while (!accessoEffettuato) {
+					scanner.reset();
+					System.out.print("Nome: ");
+					name = scanner.next();
+					System.out.print("Cognome: ");
+					surname = scanner.next();
+					System.out.print("Email: ");
+					email = scanner.next();
+					System.out.print("Password: ");
+					password = scanner.next();
+
+					if (emailAlreadyUsed(email, repository)) {
+						System.out.println("Errore: Email già presente nel database".toUpperCase());
+					} else {
+						Guest guest = repository.save(new Guest(name, surname, email, password));
+						accessoEffettuato = true;
+						System.out.println("Benvenuto, " + guest.getName());
+					}
 				}
-				else {
-					Guest guest = repository.save(new Guest(name, surname, email, password));
-				}
-
 			}
+			// ACCESSO
+			else if (inputInt == 1) {
+				boolean accessoEffettuato = false;
+
+				while (!accessoEffettuato) {
+					System.out.print("Email: ");
+					String email = scanner.next();
+					System.out.print("Password: ");
+					String password = scanner.next();
+
+					if (!passwordMatches(email, password, repository)) {
+						System.out.println("Errore: Email o password errate, prova ancora".toUpperCase());
+					} else {
+						accessoEffettuato = true;
+						Guest guest = repository.findAll().stream().filter(g -> emailAlreadyUsed(email, repository) && passwordMatches(email, password, repository)).findFirst().get();
+						System.out.println("Bentornato, " + guest.getName());
+					}
+				}
+			}
+			// SE UTENTE NON INSERISCE NE 0 NE 1
 			else {
-
-				System.out.println("Selezionare una delle seguenti attività");
-
+				throw new IllegalArgumentException("Inserire 0 o 1");
 			}
-
-
-			//if(repository.findAll().stream().anyMatch(guest -> email.equals(guest.getEmail()) || password.equals(guest.getPassword()))){
-
-			// save a few customers
-			Guest guest = new Guest( "Bauer", "pippocca@gmial.com");
-			repository.save(guest);
-
-			// fetch all customers
-			log.info("Customers found with findAll():");
-			log.info("-------------------------------");
-			for (Guest customer : repository.findAll()) {
-				log.info(customer.toString());
-			}
-			log.info("");
-
-			// fetch an individual customer by ID
-			Guest customer = repository.findById(1L);
-			log.info("Customer found with findById(1L):");
-			log.info("--------------------------------");
-			log.info(customer.toString());
-			log.info("");
-
-
-			// for (Customer bauer : repository.findByLastName("Bauer")) {
-			//  log.info(bauer.toString());
-			// }
-			log.info("");
 
 			//repository.deleteAll(repository.findAll());
 		};
+	}
+	boolean emailAlreadyUsed(String email, UserRepository repository){
+		for (Guest guest : repository.findAll()) {
+			if (guest.getEmail().equals(email)) {
+				return true;
+			}
+		}
+		return false;
+	}
 
-
+	boolean passwordMatches(String email, String password, UserRepository repository){
+		for (Guest guest : repository.findAll()) {
+			if (guest.getEmail().equals(email)) {
+				if(guest.getPassword().equals(String.valueOf(password.hashCode() * 31)))return true;
+			}
+		}
+		return false;
 	}
 }

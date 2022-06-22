@@ -9,7 +9,7 @@ import javax.persistence.Id;
 import java.util.List;
 
 @Repository
-public interface UserRepository {
+public interface UserRepository extends CrudRepository<Guest, Long> {
 
 	/**
 	 * 

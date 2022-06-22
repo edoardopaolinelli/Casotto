@@ -2,6 +2,7 @@ package com.unicam.ids2122.casotto.demo.Controller;
 
 import com.unicam.ids2122.casotto.demo.Entity.Guest;
 import com.unicam.ids2122.casotto.demo.Service.UserHandlerService;
+import org.springframework.stereotype.Controller;
 
 import java.util.List;
 
@@ -35,6 +36,7 @@ public class UserController {
 	 * @param u
 	 */
 	public void addUser(Guest u) {
+
 	}
 
 	/**

@@ -3,10 +3,11 @@ package com.unicam.ids2122.casotto.demo.Entity;
 import javax.persistence.*;
 
 @Entity
-@Table (name = "users")
+@Table(name="users")
 public class Guest {
 
 	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
 	private long idGuest;
 	private String name;
 	private String surname;
