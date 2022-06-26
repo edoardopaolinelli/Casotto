@@ -17,7 +17,7 @@ public class AttivitaController {
 	 *
 	 * @param idAttivita
 	 */
-	public Attivita getAttivita(String idAttivita) {
+	public Attivita getAttivita(long idAttivita) {
 		return attivitaService.getAttivita(idAttivita);
 	}
 
@@ -30,7 +30,7 @@ public class AttivitaController {
 	 * @param a
 	 */
 	public void addAttivita(Attivita a) {
-		String idAttivita = a.getIdAttivita();
+		long idAttivita = a.getIdAttivita();
 		attivitaService.createAttivita(idAttivita, a.getName(), a.getDescription(), a.getMaxParticipants(), a.getActualParticipants(), a.getDate(), a.getHour());
 	}
 

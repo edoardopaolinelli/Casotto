@@ -1,20 +1,25 @@
 package com.unicam.ids2122.casotto.demo.Entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="ombrelloni")
 public class Ombrellone {
 
-	private String idOmbrellone;
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	private long idOmbrellone;
 	private float price;
 	private String ombrelloneType;
 
 	public Ombrellone(){}
 
-	public Ombrellone(String idOmbrellone, float price, String ombrelloneType) {
-		this.idOmbrellone = idOmbrellone;
+	public Ombrellone(float price, String ombrelloneType) {
 		this.price = price;
 		this.ombrelloneType = ombrelloneType;
 	}
 
-	public String getIdOmbrellone() {
+	public long getIdOmbrellone() {
 		return this.idOmbrellone;
 	}
 
@@ -30,7 +35,7 @@ public class Ombrellone {
 	 * 
 	 * @param idOmbrellone
 	 */
-	public void setId(String idOmbrellone) {
+	public void setId(long idOmbrellone) {
 		this.idOmbrellone = idOmbrellone;
 	}
 
@@ -50,4 +55,8 @@ public class Ombrellone {
 		this.ombrelloneType = ombrelloneType;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("Ombrellone: [ fila: "+ ombrelloneType+","+"prezzo: "+ price+ "€ ]");
+	}
 }

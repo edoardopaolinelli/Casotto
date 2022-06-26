@@ -16,8 +16,8 @@ public class TestAttivitaController {
         AttivitaService service = new AttivitaServiceImpl(attivitaRepository);
         AttivitaController controller = new AttivitaController(service);
         Attivita attivita = new Attivita();
-        attivita.setId("A_0000");
+        attivita.setId(10000);
         controller.addAttivita(attivita);
-        assertEquals(controller.getAttivita("A_0000"), attivita);
+        assertEquals(controller.getAttivita(10000), attivita);
     }
 }

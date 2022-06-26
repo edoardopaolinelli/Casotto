@@ -13,7 +13,7 @@ public class PrenotazioneController {
 	 * 
 	 * @param idPrenotazione
 	 */
-	public Prenotazione getPrenotazione(String idPrenotazione) {
+	public Prenotazione getPrenotazione(long idPrenotazione) {
 		if (prenotazioneService == null) {
 			throw new NullPointerException("Prenotazione is null");
 		}
@@ -35,7 +35,7 @@ public class PrenotazioneController {
 		else if( prenotazioneService.getAllPrenotazioni().contains(p)) {
 			throw new IllegalArgumentException("Prenotazione already exists");
 		}
-		prenotazioneService.createPrenotazione( p.getIdPrenotazione(), p.getIdCliente(), p.getStartDate(), p.getEndDate(), p.getPrenotationType(), p.getOggettoPrenotato());
+		prenotazioneService.createPrenotazione(p.getIdCliente(), p.getStartDate(), p.getEndDate(), p.getPrenotationType(), p.getOggettoPrenotato());
 	}
 
 	/**

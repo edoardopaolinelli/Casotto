@@ -29,15 +29,15 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * @param date
 	 * @param hour
 	 */
-	public Attivita createAttivita(String idAttivita, String name, String description, int maxPartecipants, int actualPartecipants, LocalDate date, LocalTime hour) {
-		return new Attivita(idAttivita, name, description, maxPartecipants, actualPartecipants,date, hour);
+	public Attivita createAttivita(long idAttivita, String name, String description, int maxPartecipants, int actualPartecipants, LocalDate date, LocalTime hour) {
+		return new Attivita(name, description, maxPartecipants, actualPartecipants,date, hour);
 	}
 
 	/**
 	 * 
 	 * @param idAttivita
 	 */
-	public void deleteAttivita(String idAttivita) {
+	public void deleteAttivita(long idAttivita) {
 		Attivita attivita = attivitaRepository.findById(idAttivita);
 		attivitaRepository.delete(attivita);
 	}
@@ -46,7 +46,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * 
 	 * @param idAttivita
 	 */
-	public Attivita getAttivita(String idAttivita) {
+	public Attivita getAttivita(long idAttivita) {
 		return attivitaRepository.findById(idAttivita);
 	}
 
@@ -55,7 +55,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	}
 
 	@Override
-	public void addAttivita(String idAttivita) {
+	public void addAttivita(long idAttivita) {
 		if( attivitaRepository.findById(idAttivita) == null) {
 			throw new  NullPointerException("Attivita non trovata");
 		} else if(attivitaService.getAllAttivita().contains(attivitaRepository.findById(idAttivita))) {
@@ -69,7 +69,7 @@ public class AttivitaServiceImpl implements AttivitaService {
 	 * 
 	 * @param idAttivita
 	 */
-	public void removeAttivita(String idAttivita) {
+	public void removeAttivita(long idAttivita) {
 		Attivita attivita = attivitaRepository.findById(idAttivita);
 		attivitaRepository.delete(attivita);
 	}

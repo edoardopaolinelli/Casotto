@@ -9,25 +9,24 @@ public interface PrenotazioneService {
 
 	/**
 	 * 
-	 * @param idPrenotazione
-	 * @param idUser
+	 * @param idCliente
 	 * @param startDate
 	 * @param endDate
 	 * @param prenotationType
 	 */
-	Prenotazione createPrenotazione(String idPrenotazione, String idUser, LocalDate startDate, LocalDate endDate, String prenotationType, Object oggettoPrenotato);
+	Prenotazione createPrenotazione(long idCliente, LocalDate startDate, LocalDate endDate, String prenotationType, String oggettoPrenotato);
 
 	/**
 	 * 
 	 * @param idPrenotazione
 	 */
-	void deletePrenotazione(String idPrenotazione);
+	void deletePrenotazione(long idPrenotazione);
 
 	/**
 	 * 
 	 * @param idPrenotazione
 	 */
-	Prenotazione getPrenotazione(String idPrenotazione);
+	Prenotazione getPrenotazione(long idPrenotazione);
 
 	List<Prenotazione> getAllPrenotazioni();
 
@@ -41,7 +40,7 @@ public interface PrenotazioneService {
 	 * 
 	 * @param idCliente
 	 */
-	List<Prenotazione> getPrenotazioniByCliente(String idCliente);
+	List<Prenotazione> getPrenotazioniByCliente(long idCliente);
 
 	/**
 	 * 

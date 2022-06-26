@@ -1,18 +1,19 @@
 package com.unicam.ids2122.casotto.demo.Repository;
 
 import com.unicam.ids2122.casotto.demo.Entity.Lettino;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface LettinoRepository {
+public interface LettinoRepository extends CrudRepository<Lettino, Long> {
 
 	/**
 	 * 
 	 * @param l
 	 */
-	void save(Lettino l);
+	Lettino save(Lettino l);
 
 	List<Lettino> findAll();
 
@@ -20,7 +21,7 @@ public interface LettinoRepository {
 	 * 
 	 * @param id
 	 */
-	Lettino findById(String id);
+	Lettino findById(long id);
 
 	/**
 	 * 

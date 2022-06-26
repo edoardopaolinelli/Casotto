@@ -19,7 +19,7 @@ public class LettinoController {
 	 * 
 	 * @param idLettino
 	 */
-	public Lettino getLettino(String idLettino) {
+	public Lettino getLettino(long idLettino) {
 
 		return lettinoService.getLettino(idLettino);
 	}
@@ -33,8 +33,7 @@ public class LettinoController {
 	 * @param l
 	 */
 	public void addLettino(Lettino l) {
-		String lettino = l.getIdLettino();
-		lettinoService.createLettino(lettino, l.getPrice(), l.getType());
+		lettinoService.createLettino( l.getPrice(), l.getType());
 	}
 
 	/**
@@ -42,7 +41,7 @@ public class LettinoController {
 	 * @param l
 	 */
 	public void removeLettino(Lettino l) {
-		String lettino = l.getIdLettino();
+		long lettino = l.getIdLettino();
 		lettinoService.deleteLettino(lettino);
 	}
 

@@ -2,18 +2,19 @@ package com.unicam.ids2122.casotto.demo.Repository;
 
 
 import com.unicam.ids2122.casotto.demo.Entity.Ombrellone;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface OmbrelloneRepository {
+public interface OmbrelloneRepository extends CrudRepository<Ombrellone, Long> {
 
 	/**
 	 * 
 	 * @param o
 	 */
-	void save(Ombrellone o);
+	Ombrellone save(Ombrellone o);
 
 	List<Ombrellone> findAll();
 
@@ -21,7 +22,7 @@ public interface OmbrelloneRepository {
 	 * 
 	 * @param id
 	 */
-	Ombrellone findById(String id);
+	Ombrellone findById(long id);
 
 	/**
 	 * 

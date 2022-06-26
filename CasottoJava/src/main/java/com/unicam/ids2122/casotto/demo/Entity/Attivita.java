@@ -1,11 +1,16 @@
 package com.unicam.ids2122.casotto.demo.Entity;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
+@Entity
+@Table(name="attivita")
 public class Attivita {
 
-	private String idAttivita;
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	private long idAttivita;
 	private String name;
 	private String description;
 	private int maxParticipants;
@@ -15,8 +20,7 @@ public class Attivita {
 
 	public Attivita(){}
 
-	public Attivita(String idAttivita, String name, String description, int maxParticipants, int actualParticipants, LocalDate date, LocalTime hour) {
-		this.idAttivita = idAttivita;
+	public Attivita(String name, String description, int maxParticipants, int actualParticipants, LocalDate date, LocalTime hour) {
 		this.name = name;
 		this.description = description;
 		this.maxParticipants = maxParticipants;
@@ -25,7 +29,7 @@ public class Attivita {
 		this.hour = hour;
 	}
 
-	public String getIdAttivita() {
+	public long getIdAttivita() {
 		return this.idAttivita;
 	}
 
@@ -57,7 +61,7 @@ public class Attivita {
 	 * 
 	 * @param idAttivita
 	 */
-	public void setId(String idAttivita) {
+	public void setId(long idAttivita) {
 		this.idAttivita = idAttivita;
 	}
 
@@ -111,4 +115,8 @@ public class Attivita {
 		this.hour = hour;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("Attività: [ nome: "+name+", descrizione: "+description+", max partecipanti: "+maxParticipants+", partecipanti: "+actualParticipants+", data: "+date+", ora: "+hour+" ]");
+	}
 }

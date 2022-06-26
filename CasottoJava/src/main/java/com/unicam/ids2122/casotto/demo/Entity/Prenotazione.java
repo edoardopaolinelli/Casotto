@@ -1,20 +1,30 @@
 package com.unicam.ids2122.casotto.demo.Entity;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table(name="prenotazioni")
 public class Prenotazione {
 
-	private String idPrenotazione;
-	private String idCliente;
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	@Column(name = "id")
+	private long idPrenotazione;
+	@Column(name = "idcliente")
+	private long idCliente;
+	@Column(name = "startdate")
 	private LocalDate startDate;
+	@Column(name = "enddate")
 	private LocalDate endDate;
+	@Column(name = "type")
 	private String prenotationType;
-	private Object oggettoPrenotato;
+	@Column(name = "oggetto")
+	private String oggettoPrenotato;
 
 	public Prenotazione(){}
 
-	public Prenotazione(String idPrenotazione, String idCliente, LocalDate startDate, LocalDate endDate, String prenotationType, Object oggettoPrenotato) {
-		this.idPrenotazione = idPrenotazione;
+	public Prenotazione(long idCliente, LocalDate startDate, LocalDate endDate, String prenotationType, String oggettoPrenotato) {
 		this.idCliente = idCliente;
 		this.startDate = startDate;
 		this.endDate = endDate;
@@ -22,11 +32,11 @@ public class Prenotazione {
 		this.oggettoPrenotato = oggettoPrenotato;
 	}
 
-	public String getIdPrenotazione() {
+	public long getIdPrenotazione() {
 		return this.idPrenotazione;
 	}
 
-	public String getIdCliente() {
+	public long getIdCliente() {
 		return this.idCliente;
 	}
 
@@ -42,7 +52,7 @@ public class Prenotazione {
 		return this.prenotationType;
 	}
 
-	public Object getOggettoPrenotato() {
+	public String getOggettoPrenotato() {
 		return this.oggettoPrenotato;
 	}
 
@@ -50,7 +60,7 @@ public class Prenotazione {
 	 * 
 	 * @param idPrenotazione
 	 */
-	public void setId(String idPrenotazione) {
+	public void setId(long idPrenotazione) {
 		this.idPrenotazione = idPrenotazione;
 	}
 
@@ -58,7 +68,7 @@ public class Prenotazione {
 	 * 
 	 * @param idCliente
 	 */
-	public void setIdCliente(String idCliente) {
+	public void setIdCliente(long idCliente) {
 		this.idCliente = idCliente;
 	}
 
@@ -90,8 +100,12 @@ public class Prenotazione {
 	 * 
 	 * @param oggettoPrenotato
 	 */
-	public void setOggettoPrenotato(Object oggettoPrenotato) {
+	public void setOggettoPrenotato(String oggettoPrenotato) {
 		this.oggettoPrenotato = oggettoPrenotato;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("Prenotazione: [ startDate: "+startDate+", endDate: "+endDate+", type: "+prenotationType+", oggetto: "+oggettoPrenotato+" ]");
+	}
 }

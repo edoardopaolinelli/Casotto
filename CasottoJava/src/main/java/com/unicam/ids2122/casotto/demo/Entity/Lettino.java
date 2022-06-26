@@ -1,13 +1,19 @@
 package com.unicam.ids2122.casotto.demo.Entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name="lettini")
 public class Lettino {
 
-	private String idLettino;
+	@Id
+	@GeneratedValue(strategy= GenerationType.AUTO)
+	private long idLettino;
 	private float price;
 
 	private String lettinoType;
 
-	public String getIdLettino() {
+	public long getIdLettino() {
 		return this.idLettino;
 	}
 
@@ -22,8 +28,7 @@ public class Lettino {
 	public Lettino(){}
 
 
-	public Lettino(String idLettino, float price, String lettinoType){
-		this.idLettino = idLettino;
+	public Lettino(float price, String lettinoType){
 		this.price = price;
 		this.lettinoType = lettinoType;
 	}
@@ -32,7 +37,7 @@ public class Lettino {
 	 * 
 	 * @param idLettino
 	 */
-	public void setId(String idLettino) {
+	public void setId(long idLettino) {
 		this.idLettino = idLettino;
 	}
 
@@ -52,4 +57,8 @@ public class Lettino {
 		this.lettinoType = lettinoType;
 	}
 
+	@Override
+	public String toString() {
+		return String.format("Lettino: [ tipo: "+ lettinoType+","+"prezzo: "+ price+"€ ]");
+	}
 }

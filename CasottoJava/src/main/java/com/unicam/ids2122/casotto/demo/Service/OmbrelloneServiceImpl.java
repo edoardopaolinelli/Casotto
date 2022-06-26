@@ -22,7 +22,7 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * @param type
 	 */
 	public Ombrellone createOmbrellone(String idOmbrellone, float price, String type) {
-		Ombrellone ombrellone = new Ombrellone(idOmbrellone, price, type);
+		Ombrellone ombrellone = new Ombrellone(price, type);
 		ombrelloneRepository.save(ombrellone);
 		return ombrellone;
 	}
@@ -32,8 +32,6 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * @param idOmbrellone
 	 */
 	public void deleteOmbrellone(String idOmbrellone) {
-		Ombrellone ombrellone = ombrelloneRepository.findById(idOmbrellone);
-		ombrelloneRepository.delete(ombrellone);
 	}
 
 	/**
@@ -41,7 +39,7 @@ public class OmbrelloneServiceImpl implements OmbrelloneService {
 	 * @param idOmbrellone
 	 */
 	public Ombrellone getOmbrellone(String idOmbrellone) {
-		return ombrelloneRepository.findById(idOmbrellone);
+		return null;
 	}
 
 	public List<Ombrellone> getAllOmbrelloni() {

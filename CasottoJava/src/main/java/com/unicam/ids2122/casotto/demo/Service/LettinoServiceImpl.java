@@ -17,12 +17,11 @@ public class LettinoServiceImpl implements LettinoService {
 
 	/**
 	 * 
-	 * @param idLettino
 	 * @param price
 	 * @param type
 	 */
-	public Lettino createLettino(String idLettino, float price, String type) {
-		Lettino lettino = new Lettino(idLettino, price, type);
+	public Lettino createLettino( float price, String type) {
+		Lettino lettino = new Lettino( price, type);
 		lettinoRepository.save(lettino);
 		return lettino;
 	}
@@ -31,17 +30,15 @@ public class LettinoServiceImpl implements LettinoService {
 	 * 
 	 * @param idLettino
 	 */
-	public void deleteLettino(String idLettino) {
-		Lettino lettino = lettinoRepository.findById(idLettino);
-		lettinoRepository.delete(lettino);
+	public void deleteLettino(long idLettino) {
 	}
 
 	/**
 	 * 
 	 * @param idLettino
 	 */
-	public Lettino getLettino(String idLettino) {
-		return lettinoRepository.findById(idLettino);
+	public Lettino getLettino(long idLettino) {
+		return null;
 	}
 
 	public List<Lettino> getAllLettini() {

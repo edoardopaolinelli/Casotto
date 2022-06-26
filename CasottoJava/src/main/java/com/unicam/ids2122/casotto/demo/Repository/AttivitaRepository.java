@@ -1,18 +1,19 @@
 package com.unicam.ids2122.casotto.demo.Repository;
 
 import com.unicam.ids2122.casotto.demo.Entity.Attivita;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
-public interface AttivitaRepository {
+public interface AttivitaRepository extends CrudRepository<Attivita, Long> {
 
 	/**
 	 * 
 	 * @param a
 	 */
-	void save(Attivita a);
+	Attivita save(Attivita a);
 
 	List<Attivita> findAll();
 
@@ -20,7 +21,7 @@ public interface AttivitaRepository {
 	 * 
 	 * @param id
 	 */
-	Attivita findById(String id);
+	Attivita findById(long id);
 
 	/**
 	 * 

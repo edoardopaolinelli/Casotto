@@ -18,19 +18,19 @@ public interface AttivitaService {
 	 * @param date
 	 * @param hour
 	 */
-	Attivita createAttivita(String idAttivita, String name, String description, int maxPartecipants, int actualPartecipants, LocalDate date, LocalTime hour);
+	Attivita createAttivita(long idAttivita, String name, String description, int maxPartecipants, int actualPartecipants, LocalDate date, LocalTime hour);
 
 	/**
 	 * 
 	 * @param idAttivita
 	 */
-	void deleteAttivita(String idAttivita);
+	void deleteAttivita(long idAttivita);
 
 	/**
 	 * 
 	 * @param idAttivita
 	 */
-	Attivita getAttivita(String idAttivita);
+	Attivita getAttivita(long idAttivita);
 
 	List<Attivita> getAllAttivita();
 
@@ -38,13 +38,13 @@ public interface AttivitaService {
 	 * 
 	 * @param idAttivita
 	 */
-	void addAttivita(String idAttivita);
+	void addAttivita(long idAttivita);
 
 	/**
 	 * 
 	 * @param idAttivita
 	 */
-	void removeAttivita(String idAttivita);
+	void removeAttivita(long idAttivita);
 
 	/**
 	 * 
