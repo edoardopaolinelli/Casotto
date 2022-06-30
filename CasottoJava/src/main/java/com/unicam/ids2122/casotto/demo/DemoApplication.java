@@ -87,7 +87,7 @@ public class DemoApplication {
 							System.out.println("Benvenuto, " + guest.getName());
 						}
 					}
-					user = Optional.of(new Guest(name, surname, email, password));
+					user = Optional.of(new Cliente(name, surname, email, password));
 				}
 				// ACCESSO
 				else if (inputInt == 1) {
@@ -140,8 +140,15 @@ public class DemoApplication {
 							break;
 						case 3:
 							if(scegliAttivita(user.get(), attivitaRepository, prenotazioneRepository, scanner)){
+								back = true;
+							}
+							break;
+						case 4:
+							for(Prenotazione p : getListPrenotazioniByUserId(prenotazioneRepository, user.get())){
+								System.out.println(p);
+							}
+							backsToMainMenu(scanner);
 							back = true;
-						}
 							break;
 						case 5:
 							Thread.sleep(500);
@@ -190,49 +197,100 @@ public class DemoApplication {
 		System.out.println("\n");
 		System.out.println("Selezionare il numero desiderato tra quelli elencati.");
 		int input = scanner.nextInt();
-		boolean fontCorrect;
+		boolean formCorrect;
 
 		long idCliente = user.getIdGuest();
 		LocalDate inputStartDate = null, inputEndDate = null;
 		String prenotationType = attivita.get(input).toString();
 		String oggettoPrenotato = attivita.get(input).toString();
-		do{
-			System.out.println("Seleziona una data di inizio in formato DD/MM/YYYY: ");
-			String startDate = scanner.next();
-			try{
-				inputStartDate = parseFormat(startDate);
-				fontCorrect = true;
-			}catch(Exception e){
-				fontCorrect = false;
+		boolean isPrenoted = false;
+		do {
+			do {
+				System.out.println("Seleziona una data di inizio in formato DD/MM/YYYY: ");
+				String startDate = scanner.next();
+				try {
+					inputStartDate = parseFormat(startDate);
+					formCorrect = true;
+				} catch (Exception e) {
+					formCorrect = false;
+				}
+
+			} while (!formCorrect);
+			formCorrect = false;
+			do {
+				System.out.println("Seleziona una data di fine in formato DD/MM/YYYY: ");
+				String endDate = scanner.next();
+				try {
+					inputEndDate = parseFormat(endDate);
+					formCorrect = true;
+				} catch (Exception e) {
+					formCorrect = false;
+				}
+
+			} while (!formCorrect);
+
+			List<Prenotazione> prenotazioni = (List<Prenotazione>) prenotazioniRepository.findAll();
+			Prenotazione prenotazione = new Prenotazione(idCliente, inputStartDate, inputEndDate, prenotationType, oggettoPrenotato);
+			for (Prenotazione p : prenotazioni){//filter(p -> p.getPrenotationType().equals("OMBRELLONI")).toList()) {
+				if (prenotazione.getStartDate().isAfter(p.getStartDate()) && prenotazione.getEndDate().isBefore(p.getEndDate())) {
+					System.out.println("ERRORE: DATA NON DISPONIBILE");
+					isPrenoted = true;
+					break;
+				} else {
+					isPrenoted = false;
+				}
+
 			}
-
-		} while (!fontCorrect);
-		fontCorrect = false;
-		do{
-			System.out.println("Seleziona una data di fine in formato DD/MM/YYYY: ");
-			String endDate = scanner.next();
-			try {
-				inputEndDate = parseFormat(endDate);
-				fontCorrect = true;
-			} catch(Exception e){
-				fontCorrect = false;
-			}
-
-		} while (!fontCorrect);
-
+		} while(isPrenoted);
 		prenotazioniRepository.save(new Prenotazione(idCliente, inputStartDate, inputEndDate, prenotationType, oggettoPrenotato));
 		Thread.sleep(500);
 		System.out.println("Prenotazione per "+attivita.get(input).toString()+" effettuata correttamente.");
 		Thread.sleep(500);
 		System.out.println("\n");
+
+		return backsToMainMenu(scanner);
+
+	}
+
+	boolean backsToMainMenu(Scanner scanner){
 		System.out.println("Vuoi fare altro? Y se si N se no");
 
 		String more = scanner.next();
 		return more.equals("Y") || more.equals("y");
+	}
 
+	List<Prenotazione> getListPrenotazioniByUserId(CrudRepository prenotazioniRepository, Guest user){
+		List<Prenotazione> prenotazioni = (List<Prenotazione>)prenotazioniRepository.findAll();
+		return prenotazioni
+				.stream()
+				.filter(p -> p.getIdCliente() == user.getIdGuest())
+				.sorted(Comparator.comparing(Prenotazione::getStartDate)).toList();
 	}
 
 	LocalDate parseFormat(String date) throws InputMismatchException {
 		return LocalDate.of(Integer.parseInt(date.substring(6,10)),Integer.parseInt(date.substring(3,5)),Integer.parseInt(date.substring(0,2)));
 	}
+
+	boolean isAlreadyPrenoted(Prenotazione prenotazione, CrudRepository prenotazioniIterable){
+		List<Prenotazione> prenotazioni = (List<Prenotazione>)prenotazioniIterable.findAll();
+		for(Prenotazione p : prenotazioni){
+			//if(isDateBetween(prenotazione, prenotazioni) || (prenotazione.getStartDate().isBefore(p.getStartDate()) && (isDateBetween(prenotazione, prenotazioni))){
+
+			//}
+		}
+		return false;
+	}
+
+	boolean isDateBetween(Prenotazione prenotazione, List<Prenotazione> prenotazioni){
+		for(Prenotazione p : prenotazioni){
+			if(prenotazione.getStartDate().isAfter(p.getStartDate()) && prenotazione.getStartDate().isBefore(p.getEndDate())){
+				return true;
+			}
+		}
+		return false;
+	}
 }
+
+// TODO controllo se c'è già una prenotazione (quasi)
+// TODO string aoggetto non va bene
+// TODO mattina, pomeriggio, tutto il giorno?
