@@ -30,4 +30,6 @@ public interface OmbrelloneRepository extends CrudRepository<Ombrellone, Long> {
 	 */
 	void delete(Ombrellone o);
 
+	void deleteAll();
+
 }

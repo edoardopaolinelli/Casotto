@@ -36,11 +36,14 @@ public class DemoApplication {
 								  PrenotazioneRepository prenotazioneRepository) {
 		return (args) -> {
 
-			/*ombrelloneRepository.save(new Ombrellone(10.0f, "2° fila"));
-			ombrelloneRepository.save(new Ombrellone(15.0f, "1° fila"));
-			ombrelloneRepository.save(new Ombrellone(10.0f, "3° fila"));
-			ombrelloneRepository.save(new Ombrellone(10.0f, "3° fila"));
-			ombrelloneRepository.save(new Ombrellone(8.0f, "6 fila° fila"));*/
+
+			/*ombrelloneRepository.deleteAll();
+
+			ombrelloneRepository.save(new Ombrellone(10.0f, "2"));
+			ombrelloneRepository.save(new Ombrellone(15.0f, "1"));
+			ombrelloneRepository.save(new Ombrellone(10.0f, "3"));
+			ombrelloneRepository.save(new Ombrellone(10.0f, "3"));
+			ombrelloneRepository.save(new Ombrellone(8.0f, "6"));*/
 
 			/*lettinoRepository.save(new Lettino(10.0f, "LETTINO"));
 			lettinoRepository.save(new Lettino(8.0f, "SDRAIO"));
@@ -52,20 +55,20 @@ public class DemoApplication {
 
 
 			boolean isLoggedIn;
-			Optional<Guest> user = null;
+			Optional<Guest> user = Optional.empty();
 
 			do {
 
 				System.out.println("\t\t\tCASOTTO\t\t\t");
 				System.out.println("---------------------------------");
-				System.out.println("Premere 0 per Registrarsi oppure 1 per Accedere");
+				System.out.println("Premere 1 per Registrarsi oppure 2 per Accedere");
 
 				Scanner scanner = new Scanner(System.in);
 				int inputInt = scanner.nextInt();
 
 
 				// REGISTRAZIONE
-				if (inputInt == 0) {
+				if (inputInt == 1) {
 					String name = "", surname = "", email = "", password = "";
 					boolean accessoEffettuato = false;
 					while (!accessoEffettuato) {
@@ -80,17 +83,17 @@ public class DemoApplication {
 						password = scanner.next();
 
 						if (emailAlreadyUsed(email, userRepository)) {
-							System.out.println("Errore: Email già presente nel database".toUpperCase());
+							System.out.println("\nErrore: Email già presente nel database.\n".toUpperCase());
 						} else {
 							Guest guest = userRepository.save(new Guest(name, surname, email, password));
 							accessoEffettuato = true;
-							System.out.println("Benvenuto, " + guest.getName());
+							System.out.println("\nBenvenuto, " + guest.getName()+"\n");
 						}
 					}
 					user = Optional.of(new Cliente(name, surname, email, password));
 				}
 				// ACCESSO
-				else if (inputInt == 1) {
+				else if (inputInt == 2) {
 					boolean accessoEffettuato = false;
 					String email = "", password = "";
 
@@ -101,12 +104,12 @@ public class DemoApplication {
 						password = scanner.next();
 
 						if (!passwordMatches(email, password, userRepository)) {
-							System.out.println("Errore: Email o password errate, prova ancora".toUpperCase());
+							System.out.println("\nErrore: Email o password errate, prova ancora.\n".toUpperCase());
 						} else {
 							accessoEffettuato = true;
 							String usedEmail = email, userPassword = password;
 							user = userRepository.findAll().stream().filter(g -> emailAlreadyUsed(usedEmail, userRepository) && passwordMatches(usedEmail, userPassword, userRepository)).findFirst();
-							System.out.println("Bentornato, " + user.get().getName());
+							System.out.println("\nBentornato, " + user.get().getName()+"\n");
 						}
 					}
 				}
@@ -145,6 +148,7 @@ public class DemoApplication {
 							break;
 						case 4:
 							for(Prenotazione p : getListPrenotazioniByUserId(prenotazioneRepository, user.get())){
+								Thread.sleep(200);
 								System.out.println(p);
 							}
 							backsToMainMenu(scanner);
@@ -162,7 +166,7 @@ public class DemoApplication {
 				} while (back);
 
 
-				System.out.println("A presto!");
+				System.out.println("\nA presto!\n");
 				//repository.deleteAll(repository.findAll());
 			} while (!isLoggedIn);
 
@@ -194,8 +198,7 @@ public class DemoApplication {
 			Thread.sleep(200);
 
 		}
-		System.out.println("\n");
-		System.out.println("Selezionare il numero desiderato tra quelli elencati.");
+		System.out.println("\nSelezionare il numero desiderato tra quelli elencati.");
 		int input = scanner.nextInt();
 		boolean formCorrect;
 
@@ -206,7 +209,7 @@ public class DemoApplication {
 		boolean isPrenoted = false;
 		do {
 			do {
-				System.out.println("Seleziona una data di inizio in formato DD/MM/YYYY: ");
+				System.out.println("\nSeleziona una data di inizio in formato DD/MM/YYYY: ");
 				String startDate = scanner.next();
 				try {
 					inputStartDate = parseFormat(startDate);
@@ -218,7 +221,7 @@ public class DemoApplication {
 			} while (!formCorrect);
 			formCorrect = false;
 			do {
-				System.out.println("Seleziona una data di fine in formato DD/MM/YYYY: ");
+				System.out.println("\nSeleziona una data di fine in formato DD/MM/YYYY: ");
 				String endDate = scanner.next();
 				try {
 					inputEndDate = parseFormat(endDate);
@@ -229,31 +232,44 @@ public class DemoApplication {
 
 			} while (!formCorrect);
 
+			// Controllo se la prenotazione è già effettuata
 			List<Prenotazione> prenotazioni = (List<Prenotazione>) prenotazioniRepository.findAll();
 			Prenotazione prenotazione = new Prenotazione(idCliente, inputStartDate, inputEndDate, prenotationType, oggettoPrenotato);
-			for (Prenotazione p : prenotazioni){//filter(p -> p.getPrenotationType().equals("OMBRELLONI")).toList()) {
-				if (prenotazione.getStartDate().isAfter(p.getStartDate()) && prenotazione.getEndDate().isBefore(p.getEndDate())) {
-					System.out.println("ERRORE: DATA NON DISPONIBILE");
-					isPrenoted = true;
-					break;
-				} else {
-					isPrenoted = false;
-				}
+			if(prenotazione.getPrenotationType().contains("Ombrellone")) {
+				for (Prenotazione p : prenotazioni.stream().filter(p -> p.getPrenotationType().contains("Ombrellone")).toList()) {
+					if (isDateBusy(prenotazione, p)){
+						System.out.println("\nOMBRELLONE GIA' PRENOTATO DA: "+p.getStartDate()+" A: "+p.getEndDate()+"\n");
+						isPrenoted = true;
+						break;
+					} else {
+						isPrenoted = false;
+					}
 
+				}
 			}
 		} while(isPrenoted);
+
+		System.out.println("\nSeleziona 1: mattina, 2: pomeriggio, 3: tutto il giorno.\n");
+		int durata = scanner.nextInt();
+
+		switch (durata) {
+			case 1 -> System.out.println("\nSelezionato solo la mattina.\n");
+			case 2 -> System.out.println("\nSelezionato solo il pomeriggio.\n");
+			case 3 -> System.out.println("\nSelezionato tutto il giorno.\n");
+			default -> System.out.println("\nSelezionare un periodo valido.\n");
+		}
+
 		prenotazioniRepository.save(new Prenotazione(idCliente, inputStartDate, inputEndDate, prenotationType, oggettoPrenotato));
 		Thread.sleep(500);
-		System.out.println("Prenotazione per "+attivita.get(input).toString()+" effettuata correttamente.");
+		System.out.println("\nPrenotazione per "+attivita.get(input).toString()+" effettuata correttamente.\n");
 		Thread.sleep(500);
-		System.out.println("\n");
 
 		return backsToMainMenu(scanner);
 
 	}
 
 	boolean backsToMainMenu(Scanner scanner){
-		System.out.println("Vuoi fare altro? Y se si N se no");
+		System.out.println("\nVuoi fare altro? Y se si N se no\n");
 
 		String more = scanner.next();
 		return more.equals("Y") || more.equals("y");
@@ -271,26 +287,9 @@ public class DemoApplication {
 		return LocalDate.of(Integer.parseInt(date.substring(6,10)),Integer.parseInt(date.substring(3,5)),Integer.parseInt(date.substring(0,2)));
 	}
 
-	boolean isAlreadyPrenoted(Prenotazione prenotazione, CrudRepository prenotazioniIterable){
-		List<Prenotazione> prenotazioni = (List<Prenotazione>)prenotazioniIterable.findAll();
-		for(Prenotazione p : prenotazioni){
-			//if(isDateBetween(prenotazione, prenotazioni) || (prenotazione.getStartDate().isBefore(p.getStartDate()) && (isDateBetween(prenotazione, prenotazioni))){
-
-			//}
-		}
-		return false;
-	}
-
-	boolean isDateBetween(Prenotazione prenotazione, List<Prenotazione> prenotazioni){
-		for(Prenotazione p : prenotazioni){
-			if(prenotazione.getStartDate().isAfter(p.getStartDate()) && prenotazione.getStartDate().isBefore(p.getEndDate())){
-				return true;
-			}
-		}
-		return false;
+	boolean isDateBusy(Prenotazione newPrenotazione, Prenotazione oldPrenotazione){
+		return (newPrenotazione.getStartDate().isAfter(oldPrenotazione.getStartDate()) && newPrenotazione.getEndDate().isBefore(oldPrenotazione.getEndDate()))
+				|| (newPrenotazione.getEndDate().isAfter(oldPrenotazione.getStartDate()) && newPrenotazione.getStartDate().isBefore(oldPrenotazione.getEndDate()))
+				|| newPrenotazione.getStartDate().isBefore(oldPrenotazione.getStartDate()) && newPrenotazione.getEndDate().isAfter(oldPrenotazione.getEndDate());
 	}
 }
-
-// TODO controllo se c'è già una prenotazione (quasi)
-// TODO string aoggetto non va bene
-// TODO mattina, pomeriggio, tutto il giorno?

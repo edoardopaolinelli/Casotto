@@ -106,6 +106,6 @@ public class Prenotazione {
 
 	@Override
 	public String toString() {
-		return String.format("Prenotazione: [ startDate: "+startDate+", endDate: "+endDate+", type: "+prenotationType+", oggetto: "+oggettoPrenotato+" ]");
+		return String.format("Prenotazione: [ startDate: "+startDate+", endDate: "+endDate+", oggetto: "+oggettoPrenotato+" ]");
 	}
 }
